@@ -25,7 +25,7 @@ help_text = """**v1.4**
 
 •`Trim` - cut your videos"""
 
-source_text = "**Chill**"
+source_text = "**Source**"
 
 spam_notice = "Run only one process at a time.Spamming the bot or encoding porn videos will lead you to a ban.\n\n Also, admins are not responsible for content processed under this bot"
 
