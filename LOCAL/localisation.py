@@ -1,7 +1,7 @@
 #Don't be a thief by stealing other's Hardwork, it took time and effort to make this repo.
 #Respect my work by not making any changes here.
 
-START_TEXT = ("Hi Baby, I am Encoder Bot,\n\nI can do multiple things!!\n\nCheck in the Menu 'what I can do' .")
+START_TEXT = ("Hi, I am Encoder Bot,\n\nI can do multiple things!!\n\nCheck in the Menu 'what I can do' .")
 
 FORCE_SUB_TEXT = "Hew!!\nIn order to use me, you've to join my parent channel."
 
