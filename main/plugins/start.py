@@ -20,7 +20,7 @@ from .. import Drone, ACCESS_CHANNEL, AUTH_USERS
 
 from main.plugins.actions import set_thumbnail, rem_thumbnail, heroku_restart
 from LOCAL.localisation import START_TEXT as st
-from LOCAL.localisation import spam_notice, help_text, DEV, source_text, SUPPORT_LINK
+from LOCAL.localisation import spam_notice, help_text, SUPPORT_LINK
 
 @Drone.on(events.NewMessage(incoming=True, pattern="/start"))
 async def start(event):
@@ -46,13 +46,13 @@ async def help(event):
                          Button.inline("SET THUMB", data="sett"),
                          Button.inline("REM THUMB", data='remt')],
                          [
-                         Button.inline("PLUGINS", data="plugins"),
+                         Button.inline("ACTIONS", data="actions"),
                          Button.inline("RESTART", data="restart")],
                          [Button.url("SUPPORT", url=f"{SUPPORT_LINK}")],
                          [
                          Button.inline("BACK", data="menu")]])
     
-@Drone.on(events.callbackquery.CallbackQuery(data="plugins"))
+@Drone.on(events.callbackquery.CallbackQuery(data="actions"))
 async def plugins(event):
     await event.edit(f'{help_text}',
                     buttons=[[Button.inline("Menu.", data="menu")]])
