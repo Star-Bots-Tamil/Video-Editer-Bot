@@ -20,7 +20,7 @@ from .. import Drone, ACCESS_CHANNEL, AUTH_USERS
 
 from main.plugins.actions import set_thumbnail, rem_thumbnail, heroku_restart
 from LOCAL.localisation import START_TEXT as st
-from LOCAL.localisation import spam_notice, help_text, SUPPORT_LINK, source_text, MUST_JOIN_HERE
+from LOCAL.localisation import spam_notice, help_text, SUPPORT_LINK, source_text, DEV
 
 @Drone.on(events.NewMessage(incoming=True, pattern="/start"))
 async def start(event):
