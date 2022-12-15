@@ -20,7 +20,7 @@ from .. import Drone, ACCESS_CHANNEL, AUTH_USERS
 
 from main.plugins.actions import set_thumbnail, rem_thumbnail, heroku_restart
 from LOCAL.localisation import START_TEXT as st
-from LOCAL.localisation import spam_notice, help_text, SUPPORT_LINK
+from LOCAL.localisation import spam_notice, help_text, SUPPORT_LINK, source_text
 
 @Drone.on(events.NewMessage(incoming=True, pattern="/start"))
 async def start(event):
@@ -38,13 +38,20 @@ async def menu(event):
 @Drone.on(events.callbackquery.CallbackQuery(data="notice"))
 async def notice(event):
     await event.answer(f'{spam_notice}', alert=True)
+
+@Drone.on(events.callbackquery.CallbackQuery(data="source"))
+async def source(event):
+    await event.edit(source_text,
+                    buttons=[[
+                         Button.url("SOURCE", url="https://github.com/vasusen-code/videoconvertor/"),
+                         Button.url("TAKE ME THERE", url="https://github.com/vasusen-code/videoconvertor/")]])
                                  
 @Drone.on(events.callbackquery.CallbackQuery(data="help"))
 async def help(event):
     await event.edit('**👥HELP & SETTINGS**',
                     buttons=[[
                          Button.inline("SET THUMB", data="sett"),
-                         Button.inline("REM THUMB", data='remt')],
+                         Button.inline("REM. THUMB", data='remt')],
                          [
                          Button.inline("ACTIONS", data="actions"),
                          Button.inline("RESTART", data="restart")],
