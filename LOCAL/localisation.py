@@ -1,16 +1,14 @@
 #Don't be a thief by stealing other's Hardwork, it took time and effort to make this repo.
 #Respect my work by not making any changes here.
 
-START_TEXT = "Send me any file to begin."
+START_TEXT = "Hi, I am Encoder Bot,\n\nI can do multiple things!!\n\nCheck in the Menu 'what I can do' ."
 
-FORCE_SUB_TEXT = "In order to use this bot, you've to join my parent channel."
+FORCE_SUB_TEXT = "Hew!!\nIn order to use me, you've to join my parent channel."
 
-CHANNEL_LINK = "https://t.me/DroneBots"
+CHANNEL_LINK = "https://t.me/shadow_linkz"
 
 SUPPORT_LINK = "https://t.me/TeamDrone"
-
-info_text = "This bot is developed by @MaheshChauhan\n\nWritten in python library TELETHON.\n\nBot by : @DroneBots\nSupport : @TeamDrone\n\nV1.4"   
-
+   
 help_text = """**v1.4**
 
 •`Encode` - encode your video into different lib format or resolution
@@ -27,11 +25,11 @@ help_text = """**v1.4**
 
 •`Trim` - cut your videos"""
 
-source_text = "**Deploy your own bot**"
+source_text = "*Chill*"
 
-DEV = "https://t.me/MaheshChauhan"
+DEV = "https://t.me/shadow_linkz"
 
-spam_notice = "This bot is hosted on heroku, and hence can just run one process at a time.Spamming the bot or encoding adult videos will lead you to a ban."
+spam_notice = "Run only one process at a time.Spamming the bot or encoding porn videos will lead you to a ban.\n\n Also, admins are not responsible for content processed under this bot"
 
 JPG = "LOCAL/video_convertor.jpg"
 
