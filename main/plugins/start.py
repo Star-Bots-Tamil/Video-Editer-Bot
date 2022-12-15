@@ -10,7 +10,7 @@
 #  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
 #  General Public License for more details.
 #
-#  License can be found in < https://github.com/vasusen-code/VIDEOconvertor/blob/public/LICENSE> .
+#  License can be found in < https://github.com/nimmni/VIDEOconvertor-personal/blob/public/LICENSE> .
 
 from telethon import events, Button
 from ethon.teleutils import mention
@@ -43,8 +43,8 @@ async def notice(event):
 async def source(event):
     await event.edit(source_text,
                     buttons=[[
-                         Button.url("SOURCE", url="https://github.com/vasusen-code/videoconvertor/"),
-                         Button.url("TAKE ME THERE", url="https://github.com/vasusen-code/videoconvertor/")]])
+                         Button.url("SOURCE", url="https://github.com/nimmni/VIDEOconvertor-personal/"),
+                         Button.inline("BACK", data="menu")]])
                                  
 @Drone.on(events.callbackquery.CallbackQuery(data="help"))
 async def help(event):
