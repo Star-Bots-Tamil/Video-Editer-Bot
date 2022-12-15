@@ -7,7 +7,7 @@ FORCE_SUB_TEXT = "Hew!!\nIn order to use me, you've to join my parent channel."
 
 CHANNEL_LINK = "https://t.me/shadow_linkz"
 
-SUPPORT_LINK = "https://t.me/TeamDrone"
+SUPPORT_LINK = "https://t.me/night_shadowz"
    
 help_text = """**v1.4**
 
@@ -24,10 +24,6 @@ help_text = """**v1.4**
 •`SSHOTS` - generate 10 screenshots of your video
 
 •`Trim` - cut your videos"""
-
-source_text = "*Chill*"
-
-DEV = "https://t.me/shadow_linkz"
 
 spam_notice = "Run only one process at a time.Spamming the bot or encoding porn videos will lead you to a ban.\n\n Also, admins are not responsible for content processed under this bot"
 
