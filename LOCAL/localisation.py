@@ -1,7 +1,7 @@
 #Don't be a thief by stealing other's Hardwork, it took time and effort to make this repo.
 #Respect my work by not making any changes here.
 
-START_TEXT = "Hi, I am Encoder Bot,\n\nI can do multiple things!!\n\nCheck in the Menu 'what I can do' ."
+START_TEXT = ("Hi",{sender.first_name}, "I am Encoder Bot,\n\nI can do multiple things!!\n\nCheck in the Menu 'what I can do' .")
 
 FORCE_SUB_TEXT = "Hew!!\nIn order to use me, you've to join my parent channel."
 
@@ -24,6 +24,8 @@ help_text = """**v1.4**
 •`SSHOTS` - generate 10 screenshots of your video
 
 •`Trim` - cut your videos"""
+
+source_text = "**Chill**"
 
 spam_notice = "Run only one process at a time.Spamming the bot or encoding porn videos will lead you to a ban.\n\n Also, admins are not responsible for content processed under this bot"
 
