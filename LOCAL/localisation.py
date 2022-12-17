@@ -7,7 +7,7 @@ FORCE_SUB_TEXT = "Hew!!\nIn order to use me, you've to join my parent channel."
 
 CHANNEL_LINK = "https://t.me/shadow_linkz"
 
-SUPPORT_LINK = "https://t.me/TeamDrone"
+SUPPORT_LINK = "https://t.me/night_shadowz"
    
 help_text = """**v1.4**
 
