@@ -31,13 +31,13 @@ DEV = "https://t.me/MaheshChauhan"
 
 spam_notice = "Run only one process at a time.Spamming the bot or encoding porn videos will lead you to a ban.\n\n Also, admins are not responsible for content processed under this bot"
 
-JPG = "LOCAL/video_convertor.jpg"
+JPG = ""
 
-JPG0 = 'https://telegra.ph/file/d98c559b56ef884ef3bad.jpg'
+JPG0 = ''
 
-JPG2 = "LOCAL/20211215_165751.jpg"
+JPG2 = ""
 
-JPG3 = "LOCAL/PicsArt_12-16-08.57.15.jpg"
+JPG3 = ""
 
-JPG4 = "LOCAL/20211219_000258.jpg"
+JPG4 = ""
 
