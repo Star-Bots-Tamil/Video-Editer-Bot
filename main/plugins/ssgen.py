@@ -40,7 +40,7 @@ async def ssgen(video, time_stamp):
 async def screenshot(event, msg):
     Star_Bots_Tamil = event.client
     name = dt.now().isoformat("_", "seconds") + ".mp4"
-    edit = await Star_Bots_Tamil.send_message(event.chat_id, "Trying to process.", reply_to=msg.id)
+    edit = await Star_Bots_Tamil.send_message(event.chat_id, "**Trying to Process.**", reply_to=msg.id)
     if hasattr(msg.media, "document"):
         file = msg.media.document
     else:
@@ -48,10 +48,10 @@ async def screenshot(event, msg):
     if msg.file.name:
         name = msg.file.name
     try:
-        await fast_download(name, file, Star_Bots_Tamil, edit, time.time(), "**DOWNLOADING:**")
+        await fast_download(name, file, Star_Bots_Tamil, edit, time.time(), "**Downloading Your File 📂**")
     except Exception as e:
         print(e)
-        return await edit.edit(f"An error occured while downloading.") 
+        return await edit.edit(f"**An Error Occured While Downloading.**") 
     pictures = []
     captions = []
     n = [8, 7, 6, 5, 4, 3, 2, 1.5, 1.25, 1.10]
@@ -60,12 +60,12 @@ async def screenshot(event, msg):
         sshot = await ssgen(name, duration/n[i]) 
         if sshot is not None:
             pictures.append(sshot)
-            captions.append(f'screenshot at {hhmmss(duration/n[i])}')
-            await edit.edit(f"`{i+1}` screenshot generated.")
+            captions.append(f'**Screenshot at {hhmmss(duration/n[i])}**')
+            await edit.edit(f"**`{i+1}` Screenshots Generated.**")
     if len(pictures) > 0:
         await Star_Bots_Tamil.send_file(event.chat_id, pictures, caption=captions)
     else:
-        await edit.edit("No screenshots could be generated!")
+        await edit.edit("**No Screenshots Could be Generated!**")
     await edit.delete()
     try:
         for pic in pictures:
