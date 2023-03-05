@@ -37,25 +37,25 @@ async def force_sub(id):
 
 async def set_thumbnail(event, img):
     db = Database(MONGODB_URI, 'videoconvertor')
-    edit = await event.client.send_message(event.chat_id, 'Trying to process.')
+    edit = await event.client.send_message(event.chat_id, '**Trying to Set Thumbnail...**')
     try:
         path = await event.client.download_media(img)
         meta = upload_file(path)
         link = f'https://telegra.ph{meta[0]}'
     except Exception as e:
         print(e)
-        return await edit.edit("Failed to Upload on Tgraph.")
+        return await edit.edit("**Failed to Upload on Tgraph.**")
     await db.update_thumb_link(event.sender_id, link)
-    await edit.edit("Done!")
+    await edit.edit("Your Thumbnail was Saved Permanently!")
     
 async def rem_thumbnail(event):
     db = Database(MONGODB_URI, 'videoconvertor')
-    edit = await event.client.send_message(event.chat_id, 'Trying.')
+    edit = await event.client.send_message(event.chat_id, '**Trying to Remove Thumbnail...**')
     T = await db.get_thumb(event.sender_id)
     if T is None:
-        return await edit.edit('No thumbnail saved!')
+        return await edit.edit('**Currently Your Not Saved Thumbnail!**')
     await db.rem_thumb_link(event.sender_id)
-    await edit.edit('Removed!')
+    await edit.edit('**Your Saved Thumbnail was Removed!**')
     
 #Heroku--------------------------------------------------------------------------------------------------------------
    
@@ -84,7 +84,7 @@ async def LOG_START(event, ps_name):
     if not str(LOG_ID).startswith("-100"):
         chat = int("-100" + str(LOG_ID))
     Tag = mention(event.sender.first_name, event.sender_id)
-    text = f'{ps_name}\n\nUSER: {Tag}'
+    text = f'**{ps_name}\n\nUSER: {Tag}**'
     xx = await event.client.send_message(int(chat), text, link_preview=False)
     return xx
 
@@ -99,12 +99,12 @@ async def LOG_END(event, ps_name):
 async def msg(event):
     ok = await event.get_reply_message()
     if not ok:
-        await event.reply("Reply to the message you want to send!")
+        await event.reply("**Reply to the Message you Want to Send!**")
     user = event.pattern_match.group(1)
     if not user:
-        await event.reply("Give the user id you want me to send message. ")
+        await event.reply("**Give the User ID You Want me to Send Message.**")
     await Star_Bots_Tamil.send_message(int(user) , ok )
-    await event.reply("Messsage sent.")
+    await event.reply("**Messsage Sent.**")
     
 #Listing--------------------------------------------------------------------------------------------------------------
 
