@@ -7,30 +7,30 @@ from .. import Star_Bots_Tamil, AUTH_USERS, MONGODB_URI
 
 from main.Database.database import Database
 
-#Database command handling--------------------------------------------------------------------------
+#Database Command handling--------------------------------------------------------------------------
 
-db = Database(MONGODB_URI, 'videoconvertor')
+db = Database(MONGODB_URI, 'Video-Editer-Bot')
 
 @Star_Bots_Tamil.on(events.NewMessage(incoming=True, func=lambda e: e.is_private))
 async def incomming(event):
     if not await db.is_user_exist(event.sender_id):
         await db.add_user(event.sender_id)
 
-@Star_Bots_Tamil.on(events.NewMessage(incoming=True, from_users=AUTH_USERS , pattern="/users"))
+@Star_Bots_Tamil.on(events.NewMessage(incoming=True, from_users=AUTH_USERS , pattern="/stats"))
 async def listusers(event):
-    xx = await event.reply("Counting total users in Database.")
+    xx = await event.reply("**Counting Total Users 📊 in Database.**")
     x = await db.total_users_count()
-    await xx.edit(f"Total user(s) {int(x)}")
+    await xx.edit(f"**Total Users 📊 {int(x)}**")
 
 @Star_Bots_Tamil.on(events.NewMessage(incoming=True, from_users=AUTH_USERS , pattern="/bcast"))
 async def bcast(event):
     ids = []
     msg = await event.get_reply_message()
     if not msg:
-        await event.reply("reply to a mesage to broadcast!")
-    xx = await event.reply("Counting total users in Database.")
+        await event.reply("**Reply to a Message to Broadcast!**")
+    xx = await event.reply("**Counting Total Users 📊 in Database.**")
     x = await db.total_users_count()
-    await xx.edit(f"Total user(s) {int(x)}")
+    await xx.edit(f"**Total Users 📊 {int(x)}**")
     all_users = await db.get_users()
     sent = []
     failed = []
@@ -72,30 +72,30 @@ async def bcast(event):
 async def bban(event):
     c = event.pattern_match.group(1)
     if not c:
-        await event.reply("Disallow who!?")
+        await event.reply("**Disallow Who!?**")
     AUTH = config("AUTH_USERS", default=None)
     admins = []
     admins.append(f'{int(AUTH)}')
     if c in admins:
-        return await event.reply("I cannot ban an AUTH_USER")
+        return await event.reply("**I Can't Ban an AUTH_USER**")
     xx = await db.is_banned(int(c))
     if xx is True:
-        return await event.reply("User is already disallowed!")
+        return await event.reply("**User is Already Disallowed!**")
     else:
         await db.banning(int(c))
-        await event.reply(f"{c} is now disallowed.")
-    admins.remove(f'{int(AUTH)}')
+        await event.reply(f"**{c} is Now Disallowed.**")
+    admins.remove(f'**{int(AUTH)}**')
     
 @Star_Bots_Tamil.on(events.NewMessage(incoming=True, from_users=AUTH_USERS , pattern="^/allow (.*)" ))
 async def unbban(event):
     xx = event.pattern_match.group(1)
     if not xx:
-        await event.reply("Allow who?")
+        await event.reply("**Allow who?**")
     xy = await db.is_banned(int(xx))
     if xy is False:
-        return await event.reply("User is already allowed!")
+        return await event.reply("**User is Already Allowed!**")
     await db.unbanning(int(xx))
-    await event.reply(f"{xx} Allowed! ")
+    await event.reply(f"**{xx} Allowed!**")
     
 
     
