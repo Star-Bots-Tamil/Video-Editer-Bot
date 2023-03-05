@@ -46,7 +46,7 @@ async def set_thumbnail(event, img):
         print(e)
         return await edit.edit("**Failed to Upload on Tgraph.**")
     await db.update_thumb_link(event.sender_id, link)
-    await edit.edit("Your Thumbnail was Saved Permanently!")
+    await edit.edit("Your Thumbnail 🏞 was Saved Permanently!")
     
 async def rem_thumbnail(event):
     db = Database(MONGODB_URI, 'Video-Editer-Bot')
@@ -55,7 +55,7 @@ async def rem_thumbnail(event):
     if T is None:
         return await edit.edit('**Currently Your Not Saved Thumbnail!**')
     await db.rem_thumb_link(event.sender_id)
-    await edit.edit('**Your Saved Thumbnail was Removed!**')
+    await edit.edit('**Your Saved Thumbnail was Removed! 🚫**')
     
 #Heroku--------------------------------------------------------------------------------------------------------------
    
