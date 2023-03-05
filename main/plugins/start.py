@@ -14,7 +14,7 @@ from Star-Bots-Tamil.localisation import spam_notice, help_text, SUPPORT_LINK, s
 async def start(event):
     await event.reply(f'{st}', 
                       buttons=[
-                              [Button.inline("Menu.", data="menu")]
+                              [Button.inline("Bot's Menu", data="menu")]
                               ])
     tag = f'[{event.sender.first_name}](tg://user?id={event.sender_id})'
     await Star_Bots_Tamil.send_message(int(ACCESS_CHANNEL), f'{tag} started the BOT')
@@ -31,26 +31,26 @@ async def notice(event):
 async def source(event):
     await event.edit(source_text,
                     buttons=[[
-                         Button.url("SOURCE", url="https://github.com/nimmni/VIDEOconvertor-personal/"),
-                         Button.inline("BACK", data="menu")]])
+                         Button.url("Source Code", url="https://bit.ly/3F0pGqK"),
+                         Button.inline("Back", data="menu")]])
                                  
 @Star_Bots_Tamil.on(events.callbackquery.CallbackQuery(data="help"))
 async def help(event):
-    await event.edit('**👥HELP & SETTINGS**',
+    await event.edit('**👥 Help & ⚙️ Settings**',
                     buttons=[[
-                         Button.inline("SET THUMB", data="sett"),
-                         Button.inline("REM. THUMB", data='remt')],
+                         Button.inline("Set Thumbnail 🏞", data="sett"),
+                         Button.inline("Remove Thumbnail 🚫", data='remt')],
                          [
-                         Button.inline("ACTIONS", data="actions"),
-                         Button.inline("RESTART", data="restart")],
-                         [Button.url("SUPPORT", url=f"{SUPPORT_LINK}")],
+                         Button.inline("🤖 Bot Features", data="actions"),
+                         Button.inline("🔄 Restart Bot", data="restart")],
+                         [Button.url("👥 Support", url=f"{SUPPORT_LINK}")],
                          [
-                         Button.inline("BACK", data="menu")]])
+                         Button.inline("Back", data="menu")]])
     
 @Star_Bots_Tamil.on(events.callbackquery.CallbackQuery(data="actions"))
 async def plugins(event):
     await event.edit(f'{help_text}',
-                    buttons=[[Button.inline("Menu.", data="menu")]])
+                    buttons=[[Button.inline("Bot's Menu", data="menu")]])
                    
  #-----------------------------------------------------------------------------------------------                            
     
@@ -60,15 +60,15 @@ async def sett(event):
     msg = await button.get_reply_message() 
     await event.delete()
     async with Star_Bots_Tamil.conversation(event.chat_id) as conv: 
-        xx = await conv.send_message("Send me any image for thumbnail as a `reply` to this message.")
+        xx = await conv.send_message("**Send me any Image for Thumbnail 🏞 as a Reply to This Message.**")
         x = await conv.get_reply()
         if not x.media:
-            xx.edit("No media found.")
+            xx.edit("**No Media Found 🚫.**")
         mime = x.file.mime_type
         if not 'png' in mime:
             if not 'jpg' in mime:
                 if not 'jpeg' in mime:
-                    return await xx.edit("No image found.")
+                    return await xx.edit("**No Image Found 🚫.**")
         await set_thumbnail(event, x.media)
         await xx.delete()
         
@@ -80,11 +80,11 @@ async def remt(event):
 @Star_Bots_Tamil.on(events.callbackquery.CallbackQuery(data="restart"))
 async def res(event):
     if not f'{event.sender_id}' == f'{int(AUTH_USERS)}':
-        return await event.edit("Only authorized user can restart!")
+        return await event.edit("**Only Authorized User Can 🔄 Restart The Bot!**")
     result = await heroku_restart()
     if result is None:
-        await event.edit("You have not filled `HEROKU_API` and `HEROKU_APP_NAME` vars.")
+        await event.edit("**You Have Not Full Filled `HEROKU_API` And `HEROKU_APP_NAME` Config Vars.**")
     elif result is False:
-        await event.edit("An error occured!")
+        await event.edit("**An Error Occured!**")
     elif result is True:
-        await event.edit("Restarting app, wait for a minute.")
+        await event.edit("**🔄 Restarting Bot 🤖, Wait for a Minute.**")
