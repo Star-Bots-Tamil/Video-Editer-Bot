@@ -90,22 +90,22 @@ async def media_rename(event, msg, new_name):
                 UT = time.time()
                 uploader = await fast_upload(out, out, UT, Star_Bots_Tamil, edit, '**Uploading Your File 📂**')
                 net_time = round(DT - UT)
-                await Star_Bots_Tamil.send_file(event.chat_id, uploader, caption=f"**Renamed By :- @{BOT_UN}\n\nTotal Time :- {net_time} seconds.**", thumb=THUMB, force_document=True)
+                await Star_Bots_Tamil.send_file(event.chat_id, uploader, caption=f"**Renamed By :- @{BOT_UN}\n\nTotal Time :- {net_time} Seconds.\n\nBot 🤖 Channel :- [Star Bots Tamil](https://t.me/Star_Bots_Tamil)**", thumb=THUMB, force_document=True)
             except Exception as e:
-                await edit.edit(f"**An Error Occured.\n\nContact :- [SUPPORT]({SUPPORT_LINK})**", link_preview=False)
+                await edit.edit(f"**An Error Occured.\n\nContact :- [Star Bots Tamil Support]({SUPPORT_LINK})**", link_preview=False)
                 print(e)
                 return
     try:  
         await fast_download(name, file, Star_Bots_Tamil, edit, DT, "**Downloading Your File 📂**")
     except Exception as e:
-        await edit.edit(f"**An Error Occured While Downloading.\n\nContact :- [SUPPORT]({SUPPORT_LINK})**", link_preview=False)
+        await edit.edit(f"**An Error Occured While Downloading.\n\nContact :- [Star Bots Tamil Support]({SUPPORT_LINK})**", link_preview=False)
         print(e)
         return
     await edit.edit("Renaming.")
     try:
         rename(name, out)
     except Exception as e:
-        await edit.edit(f"**An Error Occured While Renaming.\n\nContact :- [SUPPORT]({SUPPORT_LINK})**", link_preview=False)
+        await edit.edit(f"**An Error Occured While Renaming.\n\nContact :- [Star Bots Tamil Support]({SUPPORT_LINK})**", link_preview=False)
         print(e)
         return
     try:
@@ -124,7 +124,7 @@ async def media_rename(event, msg, new_name):
                 UT = time.time()
                 uploader = await fast_upload(f'{out}', f'{out}', UT, Star_Bots_Tamil, edit, '**Uploading Your File 📂**')
                 net_time = round(DT - UT)
-                await Star_Bots_Tamil.send_file(event.chat_id, uploader, caption=f"**Renamed By :- @{BOT_UN}\n\nTotal Time :- {net_time} Seconds.**", thumb=THUMB, attributes=attributes, force_document=False)
+                await Star_Bots_Tamil.send_file(event.chat_id, uploader, caption=f"**Renamed By :- @{BOT_UN}\n\nTotal Time :- {net_time} Seconds.\n\nBot 🤖 Channel :- [Star Bots Tamil](https://t.me/Star_Bots_Tamil)**", thumb=THUMB, attributes=attributes, force_document=False)
             elif msg.video:
                 metadata = video_metadata(out)
                 width = metadata["width"]
@@ -134,14 +134,14 @@ async def media_rename(event, msg, new_name):
                 UT = time.time()
                 uploader = await fast_upload(f'{out}', f'{out}', UT, Star_Bots_Tamil, edit, '**Uploading Your File 📂**')
                 net_time = round(DT - UT)
-                await Star_Bots_Tamil.send_file(event.chat_id, uploader, caption=f"**Renamed By :- @{BOT_UN}\n\nTotal Time :- {net_time} Seconds.**", thumb=THUMB, attributes=attributes, force_document=False)            
+                await Star_Bots_Tamil.send_file(event.chat_id, uploader, caption=f"**Renamed By :- @{BOT_UN}\n\nTotal Time :- {net_time} Seconds.\n\nBot 🤖 Channel :- [Star Bots Tamil](https://t.me/Star_Bots_Tamil)**", thumb=THUMB, attributes=attributes, force_document=False)            
             else:
                 UT = time.time()
                 uploader = await fast_upload(out, out, UT, Star_Bots_Tamil, edit, '**Uploading Your File 📂**')
                 net_time = round(DT - UT)
-                await Star_Bots_Tamil.send_file(event.chat_id, uploader, caption=f"**Renamed By : @{BOT_UN}\n\nTotal Time :- {net_time} Seconds.**", thumb=THUMB, force_document=True)
+                await Star_Bots_Tamil.send_file(event.chat_id, uploader, caption=f"**Renamed By :- @{BOT_UN}\n\nTotal Time :- {net_time} Seconds.\n\nBot 🤖 Channel :- [Star Bots Tamil](https://t.me/Star_Bots_Tamil)**", thumb=THUMB, force_document=True)
     except Exception as e:
-        await edit.edit(f"**An Error Occurred While Uploading.\n\nContact :- [SUPPORT]({SUPPORT_LINK})**", link_preview=False)
+        await edit.edit(f"**An Error Occurred While Uploading.\n\nContact :- [Star Bots Tamil Support]({SUPPORT_LINK})**", link_preview=False)
         print(e)
         return
     await edit.delete()
