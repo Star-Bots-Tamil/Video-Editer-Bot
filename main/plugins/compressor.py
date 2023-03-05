@@ -17,9 +17,9 @@ from main.plugins.actions import LOG_START, LOG_END
 
 async def compress(event, msg, ffmpeg_cmd=0, ps_name=None):
     if ps_name is None:
-        ps_name = '**COMPRESSING:**'
+        ps_name = '**Compressing Your File 📂**'
     Star_Bots_Tamil = event.client
-    edit = await Star_Bots_Tamil.send_message(event.chat_id, "Trying to process.", reply_to=msg.id)
+    edit = await Star_Bots_Tamil.send_message(event.chat_id, "**Trying to Process.**", reply_to=msg.id)
     new_name = "out_" + dt.now().isoformat("_", "seconds")
     if hasattr(msg.media, "document"):
         file = msg.media.document
@@ -49,13 +49,13 @@ async def compress(event, msg, ffmpeg_cmd=0, ps_name=None):
     log = await LOG_START(event, f'**{str(_ps)} Process Started\n\n[Bot is Busy Now]({SUPPORT_LINK})**')
     log_end_text = f'**{_ps} Process Finished\n\n[Bot is Free Now]({SUPPORT_LINK})**'
     try:
-        await fast_download(n, file, Star_Bots_Tamil, edit, DT, "**DOWNLOADING:**")
+        await fast_download(n, file, Star_Bots_Tamil, edit, DT, "**Downloading Your File 📂**")
     except Exception as e:
         os.rmdir("encodemedia")
         await log.delete()
         await LOG_END(event, log_end_text)
         print(e)
-        return await edit.edit(f"An error occured while downloading.\n\nContact [SUPPORT]({SUPPORT_LINK})", link_preview=False) 
+        return await edit.edit(f"**An error occured while downloading.\n\nContact [Star Bots Tamil Support]({SUPPORT_LINK})**", link_preview=False) 
     name = '__' + dt.now().isoformat("_", "seconds") + ".mp4"
     os.rename(n, name)
     await edit.edit("**Extracting Metadata...**")
@@ -87,7 +87,7 @@ async def compress(event, msg, ffmpeg_cmd=0, ps_name=None):
         await LOG_END(event, log_end_text)
         os.rmdir("encodemedia")
         print(e)
-        return await edit.edit(f"An error occured while FFMPEG progress.\n\nContact [SUPPORT]({SUPPORT_LINK})", link_preview=False)  
+        return await edit.edit(f"**An Error occured While FFMPEG Progress.\n\nContact :- [Star Bots Tamil Support]({SUPPORT_LINK})", link_preview=False)  
     out2 = dt.now().isoformat("_", "seconds") + ".mp4" 
     if msg.file.name:
         out2 = msg.file.name
@@ -96,9 +96,9 @@ async def compress(event, msg, ffmpeg_cmd=0, ps_name=None):
     os.rename(out, out2)
     i_size = os.path.getsize(name)
     f_size = os.path.getsize(out2)     
-    text = F'**ENCODED by:** @{BOT_UN}'
+    text = F'**Encoded By :- @{BOT_UN}\n\nBot 🤖 Channel :- [Star Bots Tamil](https://t.me/Star_Bots_Tamil)**'
     if ps_name != "**Encoding Your File 📂**":
-        text = f'**Compressed by :- @{BOT_UN}\n\nBefore Compressing :- `{i_size}`\nAfter Compressing :- `{f_size}`\n\nBot 🤖 Channel :- [Star Bots Tamil](https://t.me/Star_Bots_Tamil)**'
+        text = f'**Compressed By :- @{BOT_UN}\n\nBefore Compressing :- `{i_size}`\nAfter Compressing :- `{f_size}`\n\nBot 🤖 Channel :- [Star Bots Tamil](https://t.me/Star_Bots_Tamil)**'
     UT = time.time()
     await log.edit("Uploading file.")
     if 'x-matroska' in mime:
@@ -110,7 +110,7 @@ async def compress(event, msg, ffmpeg_cmd=0, ps_name=None):
             await LOG_END(event, log_end_text)
             os.rmdir("encodemedia")
             print(e)
-            return await edit.edit(f"**An Error Occured while Uploading.\n\nContact [SUPPORT]({SUPPORT_LINK})**", link_preview=False)
+            return await edit.edit(f"**An Error Occured while Uploading.\n\nContact :- [Star Bots Tamil Support]({SUPPORT_LINK})**", link_preview=False)
     elif 'webm' in mime:
         try:
             uploader = await fast_upload(f'{out2}', f'{out2}', UT, Star_Bots_Tamil, edit, '**Uploading Your File 📂**')
@@ -120,7 +120,7 @@ async def compress(event, msg, ffmpeg_cmd=0, ps_name=None):
             await LOG_END(event, log_end_text)
             os.rmdir("encodemedia")
             print(e)
-            return await edit.edit(f"**An Error Occured while Uploading.\n\nContact [SUPPORT]({SUPPORT_LINK})**", link_preview=False)
+            return await edit.edit(f"**An Error Occured while Uploading.\n\nContact [Star Bots Tamil Support]({SUPPORT_LINK})**", link_preview=False)
     else:
         metadata = video_metadata(out2)
         width = metadata["width"]
@@ -139,12 +139,12 @@ async def compress(event, msg, ffmpeg_cmd=0, ps_name=None):
                 await LOG_END(event, log_end_text)
                 os.rmdir("encodemedia")
                 print(e)
-                return await edit.edit(f"**An Error Occured while Uploading.\n\nContact [SUPPORT]({SUPPORT_LINK})**", link_preview=False)
+                return await edit.edit(f"**An Error Occured while Uploading.\n\nContact :- [Star Bots Tamil Support]({SUPPORT_LINK})**", link_preview=False)
     await edit.delete()
     os.remove(name)
     os.remove(out2)
     await log.delete()
-    log_end_text2 = f'**{_ps} Process Finished\n\nTime Taken :- {round((time.time()-DT)/60)} Minutes\nInitial Size :- {i_size/1000000}mb.\nFinal Size :- {f_size/1000000}mb.\n\n[Bot is Free Now.]({SUPPORT_LINK})**'
+    log_end_text2 = f'**{_ps} Process Finished\n\nTime Taken :- {round((time.time()-DT)/60)} Minutes\nInitial Size :- {i_size/1000000}mb.\nFinal Size :- {f_size/1000000}mb.\n\n[Bot is Free Now]({SUPPORT_LINK})**'
     await LOG_END(event, log_end_text2)
     
 
