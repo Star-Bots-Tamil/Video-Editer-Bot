@@ -1,3 +1,5 @@
+# (c) Star Bots Tamil
+
 from telethon import TelegramClient
 from decouple import config
 import logging
