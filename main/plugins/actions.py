@@ -36,7 +36,7 @@ async def force_sub(id):
 #Thumbnail--------------------------------------------------------------------------------------------------------------
 
 async def set_thumbnail(event, img):
-    db = Database(MONGODB_URI, 'videoconvertor')
+    db = Database(MONGODB_URI, 'Video-Editer-Bot')
     edit = await event.client.send_message(event.chat_id, '**Trying to Set Thumbnail...**')
     try:
         path = await event.client.download_media(img)
@@ -49,7 +49,7 @@ async def set_thumbnail(event, img):
     await edit.edit("Your Thumbnail was Saved Permanently!")
     
 async def rem_thumbnail(event):
-    db = Database(MONGODB_URI, 'videoconvertor')
+    db = Database(MONGODB_URI, 'Video-Editer-Bot')
     edit = await event.client.send_message(event.chat_id, '**Trying to Remove Thumbnail...**')
     T = await db.get_thumb(event.sender_id)
     if T is None:
