@@ -1,16 +1,4 @@
-#  This file is part of the VIDEOconvertor distribution.
-#  Copyright (c) 2021 vasusen-code ; All rights reserved. 
-#
-#  This program is free software: you can redistribute it and/or modify
-#  it under the terms of the GNU General Public License as published by
-#  the Free Software Foundation, version 3.
-#
-#  This program is distributed in the hope that it will be useful, but
-#  WITHOUT ANY WARRANTY; without even the implied warranty of
-#  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
-#  General Public License for more details.
-#
-#  License can be found in < https://github.com/vasusen-code/VIDEOconvertor/blob/public/LICENSE> .
+# (c) Star Bots Tamil
 
 import os, time, subprocess, asyncio
 
@@ -50,9 +38,9 @@ async def ssgen(video, time_stamp):
         None       
         
 async def screenshot(event, msg):
-    Drone = event.client
+    Star_Bots_Tamil = event.client
     name = dt.now().isoformat("_", "seconds") + ".mp4"
-    edit = await Drone.send_message(event.chat_id, "Trying to process.", reply_to=msg.id)
+    edit = await Star_Bots_Tamil.send_message(event.chat_id, "Trying to process.", reply_to=msg.id)
     if hasattr(msg.media, "document"):
         file = msg.media.document
     else:
@@ -60,7 +48,7 @@ async def screenshot(event, msg):
     if msg.file.name:
         name = msg.file.name
     try:
-        await fast_download(name, file, Drone, edit, time.time(), "**DOWNLOADING:**")
+        await fast_download(name, file, Star_Bots_Tamil, edit, time.time(), "**DOWNLOADING:**")
     except Exception as e:
         print(e)
         return await edit.edit(f"An error occured while downloading.") 
@@ -75,7 +63,7 @@ async def screenshot(event, msg):
             captions.append(f'screenshot at {hhmmss(duration/n[i])}')
             await edit.edit(f"`{i+1}` screenshot generated.")
     if len(pictures) > 0:
-        await Drone.send_file(event.chat_id, pictures, caption=captions)
+        await Star_Bots_Tamil.send_file(event.chat_id, pictures, caption=captions)
     else:
         await edit.edit("No screenshots could be generated!")
     await edit.delete()
