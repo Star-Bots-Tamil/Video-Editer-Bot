@@ -11,11 +11,11 @@ from ethon.pyutils import rename
 
 from .. import BOT_UN
 
-from LOCAL.localisation import SUPPORT_LINK, JPG, JPG2
+from Star-Bots-Tamil.localisation import SUPPORT_LINK, JPG, JPG2
 
 async def mp3(event, msg):
-    Drone = event.client
-    edit = await Drone.send_message(event.chat_id, "Trying to process!", reply_to=msg.id)
+    Star_Bots_Tamil = event.client
+    edit = await Star_Bots_Tamil.send_message(event.chat_id, "Trying to process!", reply_to=msg.id)
     if hasattr(msg.media, "document"):
         file = msg.media.document
     else:
@@ -38,7 +38,7 @@ async def mp3(event, msg):
         out = dt.now().isoformat("_", "seconds")
     try:
         DT = time.time()
-        await fast_download(name, file, Drone, edit, DT, "**DOWNLOADING:**")
+        await fast_download(name, file, Star_Bots_Tamil, edit, DT, "**DOWNLOADING:**")
     except Exception as e:
         os.rmdir("audioconvert")
         print(e)
@@ -52,8 +52,8 @@ async def mp3(event, msg):
         return await edit.edit(f"An error occured while converting!\n\nContact [SUPPORT]({SUPPORT_LINK})")
     try:
         UT = time.time()
-        uploader = await fast_upload(f'{out}.mp3', f'{out}.mp3', UT, Drone, edit, '**UPLOADING:**')
-        await Drone.send_file(event.chat_id, uploader, thumb=JPG, caption=f'**AUDIO EXTRACTED by** : @{BOT_UN}', force_document=True)
+        uploader = await fast_upload(f'{out}.mp3', f'{out}.mp3', UT, Star_Bots_Tamil, edit, '**UPLOADING:**')
+        await Star_Bots_Tamil.send_file(event.chat_id, uploader, thumb=JPG, caption=f'**AUDIO EXTRACTED by** : @{BOT_UN}', force_document=True)
     except Exception as e:
         os.rmdir("audioconvert")
         print(e)
@@ -63,8 +63,8 @@ async def mp3(event, msg):
     os.remove(f'{out}.mp3')                           
                        
 async def flac(event, msg):
-    Drone = event.client
-    edit = await Drone.send_message(event.chat_id, "Trying to process!", reply_to=msg.id)
+    Star_Bots_Tamil = event.client
+    edit = await Star_Bots_Tamil.send_message(event.chat_id, "Trying to process!", reply_to=msg.id)
     if hasattr(msg.media, "document"):
         file = msg.media.document
     else:
@@ -87,7 +87,7 @@ async def flac(event, msg):
         out = dt.now().isoformat("_", "seconds")
     try:
         DT = time.time()
-        await fast_download(name, file, Drone, edit, DT, "**DOWNLOADING:**")
+        await fast_download(name, file, Star_Bots_Tamil, edit, DT, "**DOWNLOADING:**")
     except Exception as e:
         os.rmdir("audioconvert")
         print(e)
@@ -102,8 +102,8 @@ async def flac(event, msg):
         return await edit.edit(f"An error occured while converting!\n\nContact [SUPPORT]({SUPPORT_LINK})")
     try:
         UT = time.time()
-        uploader = await fast_upload(f'{out}.flac', f'{out}.flac', UT, Drone, edit, '**UPLOADING:**')
-        await Drone.send_file(event.chat_id, uploader, thumb=JPG, caption=f'**AUDIO EXTRACTED by** : @{BOT_UN}', force_document=True)
+        uploader = await fast_upload(f'{out}.flac', f'{out}.flac', UT, Star_Bots_Tamil, edit, '**UPLOADING:**')
+        await Star_Bots_Tamil.send_file(event.chat_id, uploader, thumb=JPG, caption=f'**AUDIO EXTRACTED by** : @{BOT_UN}', force_document=True)
     except Exception as e:
         os.rmdir("audioconvert")
         print(e)
@@ -114,8 +114,8 @@ async def flac(event, msg):
     os.remove(f'{out}.flac')                 
 
 async def wav(event, msg):
-    Drone = event.client
-    edit = await Drone.send_message(event.chat_id, "Trying to process!", reply_to=msg.id)
+    Star_Bots_Tamil = event.client
+    edit = await Star_Bots_Tamil.send_message(event.chat_id, "Trying to process!", reply_to=msg.id)
     if hasattr(msg.media, "document"):
         file = msg.media.document
     else:
@@ -138,7 +138,7 @@ async def wav(event, msg):
         out = dt.now().isoformat("_", "seconds")
     try:
         DT = time.time()
-        await fast_download(name, file, Drone, edit, DT, "**DOWNLOADING:**")
+        await fast_download(name, file, Star_Bots_Tamil, edit, DT, "**DOWNLOADING:**")
     except Exception as e:
         os.rmdir("audioconvert")
         print(e)
@@ -153,8 +153,8 @@ async def wav(event, msg):
         return await edit.edit(f"An error occured while converting!\n\nContact [SUPPORT]({SUPPORT_LINK})")
     try:
         UT = time.time()
-        uploader = await fast_upload(f'{out}.wav', f'{out}.wav', UT, Drone, edit, '**UPLOADING:**')
-        await Drone.send_file(event.chat_id, uploader, thumb=JPG, caption=f'**AUDIO EXTRACTED by** : @{BOT_UN}', force_document=True)
+        uploader = await fast_upload(f'{out}.wav', f'{out}.wav', UT, Star_Bots_Tamil, edit, '**UPLOADING:**')
+        await Star_Bots_Tamil.send_file(event.chat_id, uploader, thumb=JPG, caption=f'**AUDIO EXTRACTED by** : @{BOT_UN}', force_document=True)
     except Exception as e:
         os.rmdir("audioconvert")
         print(e)
@@ -165,8 +165,8 @@ async def wav(event, msg):
     os.remove(f'{out}.wav')                 
                                        
 async def mp4(event, msg):
-    Drone = event.client
-    edit = await Drone.send_message(event.chat_id, "Trying to process!", reply_to=msg.id)
+    Star_Bots_Tamil = event.client
+    edit = await Star_Bots_Tamil.send_message(event.chat_id, "Trying to process!", reply_to=msg.id)
     if hasattr(msg.media, "document"):
         file = msg.media.document
     else:
@@ -189,7 +189,7 @@ async def mp4(event, msg):
         out = dt.now().isoformat("_", "seconds")
     try:
         DT = time.time()
-        await fast_download(name, file, Drone, edit, DT, "**DOWNLOADING:**")
+        await fast_download(name, file, Star_Bots_Tamil, edit, DT, "**DOWNLOADING:**")
     except Exception as e:
         print(e)
         return await edit.edit(f"An error occured while downloading!\n\nContact [SUPPORT]({SUPPORT_LINK})")
@@ -201,8 +201,8 @@ async def mp4(event, msg):
         return await edit.edit(f"An error occured while converting!\n\nContact [SUPPORT]({SUPPORT_LINK})")
     try:
         UT = time.time()
-        uploader = await fast_upload(f'{out}.mp4', f'{out}.mp4', UT, Drone, edit, '**UPLOADING:**')
-        await Drone.send_file(event.chat_id, uploader, thumb=JPG, caption=f'**CONVERTED by** : @{BOT_UN}', force_document=True)
+        uploader = await fast_upload(f'{out}.mp4', f'{out}.mp4', UT, Star_Bots_Tamil, edit, '**UPLOADING:**')
+        await Star_Bots_Tamil.send_file(event.chat_id, uploader, thumb=JPG, caption=f'**CONVERTED by** : @{BOT_UN}', force_document=True)
     except Exception as e:
         print(e)
         return await edit.edit(f"An error occured while uploading!\n\nContact [SUPPORT]({SUPPORT_LINK})")
@@ -210,8 +210,8 @@ async def mp4(event, msg):
     os.remove(f'{out}.mp4')                 
                                            
 async def mkv(event, msg):
-    Drone = event.client
-    edit = await Drone.send_message(event.chat_id, "Trying to process!", reply_to=msg.id)
+    Star_Bots_Tamil = event.client
+    edit = await Star_Bots_Tamil.send_message(event.chat_id, "Trying to process!", reply_to=msg.id)
     if hasattr(msg.media, "document"):
         file = msg.media.document
     else:
@@ -234,7 +234,7 @@ async def mkv(event, msg):
         out = dt.now().isoformat("_", "seconds") + ".mkv"
     try:
         DT = time.time()
-        await fast_download(name, file, Drone, edit, DT, "**DOWNLOADING:**")
+        await fast_download(name, file, Star_Bots_Tamil, edit, DT, "**DOWNLOADING:**")
     except Exception as e:
         print(e)
         return await edit.edit(f"An error occured while downloading!\n\nContact [SUPPORT]({SUPPORT_LINK})")
@@ -246,8 +246,8 @@ async def mkv(event, msg):
         return await edit.edit(f"An error occured while converting!\n\nContact [SUPPORT]({SUPPORT_LINK})")
     try:
         UT = time.time()
-        uploader = await fast_upload(f'{out}', f'{out}', UT, Drone, edit, '**UPLOADING:**')
-        await Drone.send_file(event.chat_id, uploader, thumb=JPG, caption=f'**CONVERTED by** : @{BOT_UN}', force_document=True)
+        uploader = await fast_upload(f'{out}', f'{out}', UT, Star_Bots_Tamil, edit, '**UPLOADING:**')
+        await Star_Bots_Tamil.send_file(event.chat_id, uploader, thumb=JPG, caption=f'**CONVERTED by** : @{BOT_UN}', force_document=True)
     except Exception as e:
         print(e)
         return await edit.edit(f"An error occured while uploading!\n\nContact [SUPPORT]({SUPPORT_LINK})")
@@ -255,8 +255,8 @@ async def mkv(event, msg):
     os.remove(f'{out}')
              
 async def webm(event, msg):
-    Drone = event.client
-    edit = await Drone.send_message(event.chat_id, "Trying to process!", reply_to=msg.id)
+    Star_Bots_Tamil = event.client
+    edit = await Star_Bots_Tamil.send_message(event.chat_id, "Trying to process!", reply_to=msg.id)
     if hasattr(msg.media, "document"):
         file = msg.media.document
     else:
@@ -279,7 +279,7 @@ async def webm(event, msg):
         out = dt.now().isoformat("_", "seconds") + ".webm"
     try:
         DT = time.time()
-        await fast_download(name, file, Drone, edit, DT, "**DOWNLOADING:**")
+        await fast_download(name, file, Star_Bots_Tamil, edit, DT, "**DOWNLOADING:**")
     except Exception as e:
         print(e)
         return await edit.edit(f"An error occured while downloading!\n\nContact [SUPPORT]({SUPPORT_LINK})")
@@ -291,8 +291,8 @@ async def webm(event, msg):
         return await edit.edit(f"An error occured while converting!\n\nContact [SUPPORT]({SUPPORT_LINK})")
     try:
         UT = time.time()
-        uploader = await fast_upload(f'{out}', f'{out}', UT, Drone, edit, '**UPLOADING:**')
-        await Drone.send_file(event.chat_id, uploader, thumb=JPG, caption=f'**CONVERTED by** : @{BOT_UN}', force_document=True)
+        uploader = await fast_upload(f'{out}', f'{out}', UT, Star_Bots_Tamil, edit, '**UPLOADING:**')
+        await Star_Bots_Tamil.send_file(event.chat_id, uploader, thumb=JPG, caption=f'**CONVERTED by** : @{BOT_UN}', force_document=True)
     except Exception as e:
         print(e)
         return await edit.edit(f"An error occured while uploading!\n\nContact [SUPPORT]({SUPPORT_LINK})")
@@ -300,8 +300,8 @@ async def webm(event, msg):
     os.remove(f'{out}')
              
 async def file(event, msg):
-    Drone = event.client
-    edit = await Drone.send_message(event.chat_id, "Trying to process!", reply_to=msg.id)
+    Star_Bots_Tamil = event.client
+    edit = await Star_Bots_Tamil.send_message(event.chat_id, "Trying to process!", reply_to=msg.id)
     if hasattr(msg.media, "document"):
         file = msg.media.document
     else:
@@ -320,14 +320,14 @@ async def file(event, msg):
         name = "media_" + dt.now().isoformat("_", "seconds") + ".webm"      
     try:
         DT = time.time()
-        await fast_download(name, file, Drone, edit, DT, "**DOWNLOADING:**")
+        await fast_download(name, file, Star_Bots_Tamil, edit, DT, "**DOWNLOADING:**")
     except Exception as e:
         print(e)
         return await edit.edit(f"An error occured while downloading!\n\nContact [SUPPORT]({SUPPORT_LINK})")
     try:
         UT = time.time()
-        uploader = await fast_upload(f'{name}', f'{name}', UT, Drone, edit, '**UPLOADING:**')
-        await Drone.send_file(event.chat_id, uploader, thumb=JPG, caption=f'**CONVERTED by** : @{BOT_UN}', force_document=True)
+        uploader = await fast_upload(f'{name}', f'{name}', UT, Star_Bots_Tamil, edit, '**UPLOADING:**')
+        await Star_Bots_Tamil.send_file(event.chat_id, uploader, thumb=JPG, caption=f'**CONVERTED by** : @{BOT_UN}', force_document=True)
     except Exception as e:
         print(e)
         return await edit.edit(f"An error occured while uploading!\n\nContact [SUPPORT]({SUPPORT_LINK})")
@@ -335,8 +335,8 @@ async def file(event, msg):
     os.remove(name)                           
     
 async def video(event, msg):
-    Drone = event.client
-    edit = await Drone.send_message(event.chat_id, "Trying to process!", reply_to=msg.id)
+    Star_Bots_Tamil = event.client
+    edit = await Star_Bots_Tamil.send_message(event.chat_id, "Trying to process!", reply_to=msg.id)
     if hasattr(msg.media, "document"):
         file = msg.media.document
     else:
@@ -359,7 +359,7 @@ async def video(event, msg):
         out = dt.now().isoformat("_", "seconds") + '.mp4'
     try:
         DT = time.time()
-        await fast_download(name, file, Drone, edit, DT, "**DOWNLOADING:**")
+        await fast_download(name, file, Star_Bots_Tamil, edit, DT, "**DOWNLOADING:**")
     except Exception as e:
         print(e)
         return await edit.edit(f"An error occured while downloading!\n\nContact [SUPPORT]({SUPPORT_LINK})")
@@ -376,8 +376,8 @@ async def video(event, msg):
         duration = metadata["duration"]
         attributes = [DocumentAttributeVideo(duration=duration, w=width, h=height, supports_streaming=True)]           
         UT = time.time()
-        uploader = await fast_upload(f'{out}', f'{out}', UT, Drone, edit, '**UPLOADING:**')
-        await Drone.send_file(event.chat_id, uploader, thumb=JPG2, caption=f'**CONVERTED by** : @{BOT_UN}', attributes=attributes, force_document=False)
+        uploader = await fast_upload(f'{out}', f'{out}', UT, Star_Bots_Tamil, edit, '**UPLOADING:**')
+        await Star_Bots_Tamil.send_file(event.chat_id, uploader, thumb=JPG2, caption=f'**CONVERTED by** : @{BOT_UN}', attributes=attributes, force_document=False)
     except Exception as e:
         print(e)
         return await edit.edit(f"An error occured while uploading!\n\nContact [SUPPORT]({SUPPORT_LINK})")
