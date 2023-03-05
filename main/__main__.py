@@ -1,3 +1,5 @@
+# (c) Star Bots Tamil
+
 import glob
 from pathlib import Path
 from main.utils import load_plugins
