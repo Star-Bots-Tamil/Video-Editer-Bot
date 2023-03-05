@@ -32,17 +32,17 @@ async def compin(event):
                 return await event.reply(forcesubtext)
             banned = await db.is_banned(event.sender_id)
             if banned is True:
-                return await event.reply(f'you are Banned to use me!\n\ncontact [SUPPORT]({SUPPORT_LINK})', link_preview=False)
+                return await event.reply(f'**You're Banned to Use me!\n\nContact :- [Star Bots Tamil Support]({SUPPORT_LINK})**', link_preview=False)
             video = event.file.mime_type
             if 'video' in video:
                 await event.reply("📽",
                             buttons=[
-                                [Button.inline("ENCODE", data="encode"),
-                                 Button.inline("COMPRESS", data="compress")],
-                                [Button.inline("CONVERT", data="convert"),
-                                 Button.inline("RENAME", data="rename")],
+                                [Button.inline("Encoder", data="encode"),
+                                 Button.inline("Compressor", data="compress")],
+                                [Button.inline("Converter", data="convert"),
+                                 Button.inline("Renamer", data="rename")],
                                 [Button.inline("SSHOTS", data="sshots"),
-                                 Button.inline("TRIM", data="trim")]
+                                 Button.inline("Trimmer", data="trim")]
                             ])
             elif 'png' in video:
                 return
