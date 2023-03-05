@@ -42,22 +42,22 @@ async def mp3(event, msg):
     except Exception as e:
         os.rmdir("audioconvert")
         print(e)
-        return await edit.edit(f"**An Error Occured while Downloading!\n\nContact :- [SUPPORT]({SUPPORT_LINK})**")
+        return await edit.edit(f"**An Error Occured While Downloading!\n\nContact :- [Star Bots Tamil Support]({SUPPORT_LINK})**")
     try:
         await edit.edit("**Converting Your File 📂**")
         bash(f"ffmpeg -i {name} -codec:a libmp3lame -q:a 0 {out}.mp3")
     except Exception as e:
         os.rmdir("audioconvert")
         print(e)
-        return await edit.edit(f"**An Error Occured while Converting!\n\nContact :- [SUPPORT]({SUPPORT_LINK})**")
+        return await edit.edit(f"**An Error Occured While Converting!\n\nContact :- [Star Bots Tamil Support]({SUPPORT_LINK})**")
     try:
         UT = time.time()
         uploader = await fast_upload(f'{out}.mp3', f'{out}.mp3', UT, Star_Bots_Tamil, edit, '**Uploading Your File 📂**')
-        await Star_Bots_Tamil.send_file(event.chat_id, uploader, thumb=JPG, caption=f'**Audio Extracted by :- @{BOT_UN}**', force_document=True)
+        await Star_Bots_Tamil.send_file(event.chat_id, uploader, thumb=JPG, caption=f'**Audio Extracted By :- @{BOT_UN}\n\nBot 🤖 Channel :- [Star Bots Tamil](https://t.me/Star_Bots_Tamil)**', force_document=True)
     except Exception as e:
         os.rmdir("audioconvert")
         print(e)
-        return await edit.edit(f"**An Error Occured while Uploading!\n\nContact :- [SUPPORT]({SUPPORT_LINK})**")
+        return await edit.edit(f"**An Error Occured while Uploading!\n\nContact :- [Star Bots Tamil Support]({SUPPORT_LINK})**")
     await edit.delete()
     os.remove(name)
     os.remove(f'{out}.mp3')                           
@@ -91,7 +91,7 @@ async def flac(event, msg):
     except Exception as e:
         os.rmdir("audioconvert")
         print(e)
-        return await edit.edit(f"**An Error Occurred while Downloading!\n\nContact :- [SUPPORT]({SUPPORT_LINK})**")
+        return await edit.edit(f"**An Error Occurred While Downloading!\n\nContact :- [Star Bots Tamil Support]({SUPPORT_LINK})**")
     try:
         await edit.edit("Converting.")
         bash(f"ffmpeg -i {name} -codec:a libmp3lame -q:a 0 {out}.mp3")
@@ -99,15 +99,15 @@ async def flac(event, msg):
     except Exception as e:
         os.rmdir("audioconvert")
         print(e)
-        return await edit.edit(f"**An Error Occured while Converting!\n\nContact :- [SUPPORT]({SUPPORT_LINK})**")
+        return await edit.edit(f"**An Error Occured While Converting!\n\nContact :- [Star Bots Tamil Support]({SUPPORT_LINK})**")
     try:
         UT = time.time()
         uploader = await fast_upload(f'{out}.flac', f'{out}.flac', UT, Star_Bots_Tamil, edit, '**UPLOADING:**')
-        await Star_Bots_Tamil.send_file(event.chat_id, uploader, thumb=JPG, caption=f'**Audio Extracted By :- @{BOT_UN}**', force_document=True)
+        await Star_Bots_Tamil.send_file(event.chat_id, uploader, thumb=JPG, caption=f'**Audio Extracted By :- @{BOT_UN}\n\nBot 🤖 Channel :- [Star Bots Tamil](https://t.me/Star_Bots_Tamil)**', force_document=True)
     except Exception as e:
         os.rmdir("audioconvert")
         print(e)
-        return await edit.edit(f"**An Error Occured while Uploading!\n\nContact :- [SUPPORT]({SUPPORT_LINK})**")
+        return await edit.edit(f"**An Error Occured While Uploading!\n\nContact :- [Star Bots Tamil Support]({SUPPORT_LINK})**")
     await edit.delete()
     os.remove(name)
     os.remove(f'{out}.mp3')                           
@@ -142,7 +142,7 @@ async def wav(event, msg):
     except Exception as e:
         os.rmdir("audioconvert")
         print(e)
-        return await edit.edit(f"**An Error Occurred while Downloading!\n\nContact :- [SUPPORT]({SUPPORT_LINK})**")
+        return await edit.edit(f"**An Error Occurred While Downloading!\n\nContact :- [Star Bots Tamil Support]({SUPPORT_LINK})**")
     try:
         await edit.edit("Converting.")
         bash(f"ffmpeg -i {name} -codec:a libmp3lame -q:a 0 {out}.mp3")
@@ -150,15 +150,15 @@ async def wav(event, msg):
     except Exception as e:
         os.rmdir("audioconvert")
         print(e)
-        return await edit.edit(f"**An Error Occurred while Converting!\n\nContact :- [SUPPORT]({SUPPORT_LINK})**")
+        return await edit.edit(f"**An Error Occurred While Converting!\n\nContact :- [Star Bots Tamil Support]({SUPPORT_LINK})**")
     try:
         UT = time.time()
         uploader = await fast_upload(f'{out}.wav', f'{out}.wav', UT, Star_Bots_Tamil, edit, '**Uploading Your File 📂**')
-        await Star_Bots_Tamil.send_file(event.chat_id, uploader, thumb=JPG, caption=f'**Audio Extracted By :- @{BOT_UN}**', force_document=True)
+        await Star_Bots_Tamil.send_file(event.chat_id, uploader, thumb=JPG, caption=f'**Audio Extracted By :- @{BOT_UN}\n\nBot 🤖 Channel :- [Star Bots Tamil](https://t.me/Star_Bots_Tamil)**', force_document=True)
     except Exception as e:
         os.rmdir("audioconvert")
         print(e)
-        return await edit.edit(f"**An Error Occured while Uploading!\n\nContact :- [SUPPORT]({SUPPORT_LINK})**")
+        return await edit.edit(f"**An Error Occured While Uploading!\n\nContact :- [Star Bots Tamil Support]({SUPPORT_LINK})**")
     await edit.delete()
     os.remove(name)
     os.remove(f'{out}.mp3')                           
@@ -189,23 +189,23 @@ async def mp4(event, msg):
         out = dt.now().isoformat("_", "seconds")
     try:
         DT = time.time()
-        await fast_download(name, file, Star_Bots_Tamil, edit, DT, "**DOWNLOADING:**")
+        await fast_download(name, file, Star_Bots_Tamil, edit, DT, "**Downloading Your File 📂**")
     except Exception as e:
         print(e)
-        return await edit.edit(f"**An Error Occured while Downloading!\n\nContact :- [SUPPORT]({SUPPORT_LINK})**")
+        return await edit.edit(f"**An Error Occured While Downloading!\n\nContact :- [Star Bots Tamil Support]({SUPPORT_LINK})**")
     try:
         await edit.edit("**Converting Your File 📂**")
         rename(name, f'{out}.mp4')
     except Exception as e:
         print(e)
-        return await edit.edit(f"**An Error Occured while Converting!\n\nContact :- [SUPPORT]({SUPPORT_LINK})**")
+        return await edit.edit(f"**An Error Occured While Converting!\n\nContact :- [Star Bots Tamil Support]({SUPPORT_LINK})**")
     try:
         UT = time.time()
         uploader = await fast_upload(f'{out}.mp4', f'{out}.mp4', UT, Star_Bots_Tamil, edit, '**Uploading Your File 📂**')
-        await Star_Bots_Tamil.send_file(event.chat_id, uploader, thumb=JPG, caption=f'**Converted By :- @{BOT_UN}**', force_document=True)
+        await Star_Bots_Tamil.send_file(event.chat_id, uploader, thumb=JPG, caption=f'**Converted By :- @{BOT_UN}\n\nBot 🤖 Channel :- [Star Bots Tamil](https://t.me/Star_Bots_Tamil)**', force_document=True)
     except Exception as e:
         print(e)
-        return await edit.edit(f"**An Error Occurred while Uploading!\n\nContact :- [SUPPORT]({SUPPORT_LINK})**")
+        return await edit.edit(f"**An Error Occurred While Uploading!\n\nContact :- [Star Bots Tamil Support]({SUPPORT_LINK})**")
     await edit.delete()                      
     os.remove(f'{out}.mp4')                 
                                            
@@ -237,20 +237,20 @@ async def mkv(event, msg):
         await fast_download(name, file, Star_Bots_Tamil, edit, DT, "**Downloading Your File 📂**")
     except Exception as e:
         print(e)
-        return await edit.edit(f"**An Error Occured while Downloading!\n\nContact :- [SUPPORT]({SUPPORT_LINK})**")
+        return await edit.edit(f"**An Error Occured While Downloading!\n\nContact :- [Star Bots Tamil Support]({SUPPORT_LINK})**")
     try:
         await edit.edit("Converting.")
         rename(name, f'{out}')
     except Exception as e:
         print(e)
-        return await edit.edit(f"**An Error Occured while Converting!\n\nContact :- [SUPPORT]({SUPPORT_LINK})**")
+        return await edit.edit(f"**An Error Occured While Converting!\n\nContact :- [Star Bots Tamil Support]({SUPPORT_LINK})**")
     try:
         UT = time.time()
         uploader = await fast_upload(f'{out}', f'{out}', UT, Star_Bots_Tamil, edit, '**Uploading Your File 📂**')
-        await Star_Bots_Tamil.send_file(event.chat_id, uploader, thumb=JPG, caption=f'**Converted By :- @{BOT_UN}**', force_document=True)
+        await Star_Bots_Tamil.send_file(event.chat_id, uploader, thumb=JPG, caption=f'**Converted By :- @{BOT_UN}\n\nBot 🤖 Channel :- [Star Bots Tamil](https://t.me/Star_Bots_Tamil)**', force_document=True)
     except Exception as e:
         print(e)
-        return await edit.edit(f"**An Error occurred while Uploading!\n\nContact [SUPPORT]({SUPPORT_LINK})**")
+        return await edit.edit(f"**An Error occurred While Uploading!\n\nContact [Star Bots Tamil Support]({SUPPORT_LINK})**")
     await edit.delete()                        
     os.remove(f'{out}')
              
@@ -282,20 +282,20 @@ async def webm(event, msg):
         await fast_download(name, file, Star_Bots_Tamil, edit, DT, "**Downloading Your File 📂**")
     except Exception as e:
         print(e)
-        return await edit.edit(f"**An Error Occured while Downloading!\n\nContact :- [SUPPORT]({SUPPORT_LINK})**")
+        return await edit.edit(f"**An Error Occured While Downloading!\n\nContact :- [Star Bots Tamil Support]({SUPPORT_LINK})**")
     try:
         await edit.edit("**Converting Your File 📂**")
         rename(name, f'{out}')
     except Exception as e:
         print(e)
-        return await edit.edit(f"**An Error Occured while Converting!\n\nContact :- [SUPPORT]({SUPPORT_LINK})**")
+        return await edit.edit(f"**An Error Occured While Converting!\n\nContact :- [Star Bots Tamil Support]({SUPPORT_LINK})**")
     try:
         UT = time.time()
         uploader = await fast_upload(f'{out}', f'{out}', UT, Star_Bots_Tamil, edit, '**Uploading Your File 📂**')
-        await Star_Bots_Tamil.send_file(event.chat_id, uploader, thumb=JPG, caption=f'**Converted By :- @{BOT_UN}**', force_document=True)
+        await Star_Bots_Tamil.send_file(event.chat_id, uploader, thumb=JPG, caption=f'**Converted By :- @{BOT_UN}\n\nBot 🤖 Channel :- [Star Bots Tamil](https://t.me/Star_Bots_Tamil)**', force_document=True)
     except Exception as e:
         print(e)
-        return await edit.edit(f"**An Error Occured while Uploading!\n\nContact :- [SUPPORT]({SUPPORT_LINK})**")
+        return await edit.edit(f"**An Error Occured While Uploading!\n\nContact :- [Star Bots Tamil Support]({SUPPORT_LINK})**")
     await edit.delete()                 
     os.remove(f'{out}')
              
@@ -323,14 +323,14 @@ async def file(event, msg):
         await fast_download(name, file, Star_Bots_Tamil, edit, DT, "**Downloading Your File 📂**")
     except Exception as e:
         print(e)
-        return await edit.edit(f"**An Error Occurred while Downloading!\n\nContact :- [SUPPORT]({SUPPORT_LINK})**")
+        return await edit.edit(f"**An Error Occurred While Downloading!\n\nContact :- [Star Bots Tamil Support]({SUPPORT_LINK})**")
     try:
         UT = time.time()
         uploader = await fast_upload(f'{name}', f'{name}', UT, Star_Bots_Tamil, edit, '**Uploading Your File 📂**')
-        await Star_Bots_Tamil.send_file(event.chat_id, uploader, thumb=JPG, caption=f'**Converted By :- @{BOT_UN}**', force_document=True)
+        await Star_Bots_Tamil.send_file(event.chat_id, uploader, thumb=JPG, caption=f'**Converted By :- @{BOT_UN}\n\nBot 🤖 Channel :- [Star Bots Tamil](https://t.me/Star_Bots_Tamil)**', force_document=True)
     except Exception as e:
         print(e)
-        return await edit.edit(f"**An Error Occured while Uploading!\n\nContact :- [SUPPORT]({SUPPORT_LINK})**")
+        return await edit.edit(f"**An Error Occured While Uploading!\n\nContact :- [Star Bots Tamil Support]({SUPPORT_LINK})**")
     await edit.delete()
     os.remove(name)                           
     
@@ -362,13 +362,13 @@ async def video(event, msg):
         await fast_download(name, file, Star_Bots_Tamil, edit, DT, "**Downloading Your File 📂**")
     except Exception as e:
         print(e)
-        return await edit.edit(f"**An Error Occurred while Downloading!\n\nContact :- [SUPPORT]({SUPPORT_LINK})**")
+        return await edit.edit(f"**An Error Occurred While Downloading!\n\nContact :- [Star Bots Tamil Support]({SUPPORT_LINK})**")
     try:
         await edit.edit("Converting.")
         rename(name, f'{out}')
     except Exception as e:
         print(e)
-        return await edit.edit(f"**An Error Occurred while Converting!\n\nContact :- [SUPPORT]({SUPPORT_LINK})**")
+        return await edit.edit(f"**An Error Occurred While Converting!\n\nContact :- [Star Bots Tamil Support]({SUPPORT_LINK})**")
     try:
         metadata = video_metadata(out)
         width = metadata["width"]
@@ -377,10 +377,10 @@ async def video(event, msg):
         attributes = [DocumentAttributeVideo(duration=duration, w=width, h=height, supports_streaming=True)]           
         UT = time.time()
         uploader = await fast_upload(f'{out}', f'{out}', UT, Star_Bots_Tamil, edit, '**Uploading Your File 📂**')
-        await Star_Bots_Tamil.send_file(event.chat_id, uploader, thumb=JPG2, caption=f'**Converted By :- @{BOT_UN}**', attributes=attributes, force_document=False)
+        await Star_Bots_Tamil.send_file(event.chat_id, uploader, thumb=JPG2, caption=f'**Converted By :- @{BOT_UN}\n\nBot 🤖 Channel :- [Star Bots Tamil](https://t.me/Star_Bots_Tamil)**', attributes=attributes, force_document=False)
     except Exception as e:
         print(e)
-        return await edit.edit(f"**An Error Occured while Uploading!\n\nContact :- [SUPPORT]({SUPPORT_LINK})**")
+        return await edit.edit(f"**An Error Occured While Uploading!\n\nContact :- [Star Bots Tamil Support]({SUPPORT_LINK})**")
     await edit.delete()
     os.remove(out)                           
     
