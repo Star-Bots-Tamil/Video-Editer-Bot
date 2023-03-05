@@ -21,4 +21,4 @@ FORCESUB_UN = config("FORCESUB_UN", default=None)
 ACCESS_CHANNEL = config("ACCESS_CHANNEL", default=None)
 MONGODB_URI = config("MONGODB_URI", default=None)
 
-Drone = TelegramClient('bot', API_ID, API_HASH).start(bot_token=BOT_TOKEN) 
+Star_Bots_Tamil = TelegramClient('bot', API_ID, API_HASH).start(bot_token=BOT_TOKEN) 
