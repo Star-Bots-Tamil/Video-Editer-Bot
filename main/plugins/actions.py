@@ -8,7 +8,7 @@ from telethon import events , Button
 from telethon.errors.rpcerrorlist import UserNotParticipantError, FloodWaitError
 from telethon.tl.functions.channels import GetParticipantRequest
 
-from .. import Drone, AUTH_USERS, ACCESS_CHANNEL, MONGODB_URI
+from .. import Star_Bots_Tamil, AUTH_USERS, ACCESS_CHANNEL, MONGODB_URI
 
 from main.Database.database import Database
 
@@ -23,7 +23,7 @@ async def force_sub(id):
         FORCESUB = int("-100" + str(FORCESUB))
     ok = False
     try:
-        x = await Drone(GetParticipantRequest(channel=int(FORCESUB), participant=int(id)))
+        x = await Star_Bots_Tamil(GetParticipantRequest(channel=int(FORCESUB), participant=int(id)))
         left = x.stringify()
         if 'left' in left:
             ok = True
@@ -95,7 +95,7 @@ async def LOG_END(event, ps_name):
         chat = int("-100" + str(LOG_ID))
     await event.client.send_message(int(chat), f'{ps_name}', link_preview=False)
 
-@Drone.on(events.NewMessage(incoming=True, from_users=AUTH_USERS, pattern="^/msg (.*)"))
+@Star_Bots_Tamil.on(events.NewMessage(incoming=True, from_users=AUTH_USERS, pattern="^/msg (.*)"))
 async def msg(event):
     ok = await event.get_reply_message()
     if not ok:
@@ -103,7 +103,7 @@ async def msg(event):
     user = event.pattern_match.group(1)
     if not user:
         await event.reply("Give the user id you want me to send message. ")
-    await Drone.send_message(int(user) , ok )
+    await Star_Bots_Tamil.send_message(int(user) , ok )
     await event.reply("Messsage sent.")
     
 #Listing--------------------------------------------------------------------------------------------------------------
