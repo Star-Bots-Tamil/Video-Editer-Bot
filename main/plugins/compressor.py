@@ -44,10 +44,10 @@ async def compress(event, msg, ffmpeg_cmd=0, ps_name=None):
         out = new_name + ext
     DT = time.time()
     _ps = "COMPRESS"
-    if ps_name != "**COMPRESSING:**":
+    if ps_name != "**Compressing Your File 📂**":
         _ps = "ENCODE"
-    log = await LOG_START(event, f'**{str(_ps)} PROCESS STARTED**\n\n[Bot is busy now]({SUPPORT_LINK})')
-    log_end_text = f'**{_ps} PROCESS FINISHED**\n\n[Bot is free now]({SUPPORT_LINK})'
+    log = await LOG_START(event, f'**{str(_ps)} Process Started\n\n[Bot is Busy Now]({SUPPORT_LINK})**')
+    log_end_text = f'**{_ps} Process Finished\n\n[Bot is Free Now]({SUPPORT_LINK})**'
     try:
         await fast_download(n, file, Star_Bots_Tamil, edit, DT, "**DOWNLOADING:**")
     except Exception as e:
@@ -58,7 +58,7 @@ async def compress(event, msg, ffmpeg_cmd=0, ps_name=None):
         return await edit.edit(f"An error occured while downloading.\n\nContact [SUPPORT]({SUPPORT_LINK})", link_preview=False) 
     name = '__' + dt.now().isoformat("_", "seconds") + ".mp4"
     os.rename(n, name)
-    await edit.edit("Extracting metadata...")
+    await edit.edit("**Extracting Metadata...**")
     vid = video_metadata(name)
     hgt = int(vid['height'])
     wdt = int(vid['width'])
@@ -66,7 +66,7 @@ async def compress(event, msg, ffmpeg_cmd=0, ps_name=None):
         if hgt == 360 or wdt == 640:
             await log.delete()
             await LOG_END(event, log_end_text)
-            await edit.edit("Fast compress cannot be used for this media, try using HEVC!")
+            await edit.edit("**Fast Compress is Can't be Used for This Media File 📂, Try Using HEVC!**")
             os.rmdir("encodemedia")
             return
     FT = time.time()
@@ -97,30 +97,30 @@ async def compress(event, msg, ffmpeg_cmd=0, ps_name=None):
     i_size = os.path.getsize(name)
     f_size = os.path.getsize(out2)     
     text = F'**ENCODED by:** @{BOT_UN}'
-    if ps_name != "**ENCODING:**":
-        text = f'**COMPRESSED by** : @{BOT_UN}\n\nbefore compressing : `{i_size}`\nafter compressing : `{f_size}`'
+    if ps_name != "**Encoding Your File 📂**":
+        text = f'**Compressed by :- @{BOT_UN}\n\nBefore Compressing :- `{i_size}`\nAfter Compressing :- `{f_size}`\n\nBot 🤖 Channel :- [Star Bots Tamil](https://t.me/Star_Bots_Tamil)**'
     UT = time.time()
     await log.edit("Uploading file.")
     if 'x-matroska' in mime:
         try:
-            uploader = await fast_upload(f'{out2}', f'{out2}', UT, Star_Bots_Tamil, edit, '**UPLOADING:**')
+            uploader = await fast_upload(f'{out2}', f'{out2}', UT, Star_Bots_Tamil, edit, '**Uploading Your File 📂**')
             await Star_Bots_Tamil.send_file(event.chat_id, uploader, caption=text, thumb=JPG, force_document=True)
         except Exception as e:
             await log.delete()
             await LOG_END(event, log_end_text)
             os.rmdir("encodemedia")
             print(e)
-            return await edit.edit(f"An error occured while uploading.\n\nContact [SUPPORT]({SUPPORT_LINK})", link_preview=False)
+            return await edit.edit(f"**An Error Occured while Uploading.\n\nContact [SUPPORT]({SUPPORT_LINK})**", link_preview=False)
     elif 'webm' in mime:
         try:
-            uploader = await fast_upload(f'{out2}', f'{out2}', UT, Star_Bots_Tamil, edit, '**UPLOADING:**')
+            uploader = await fast_upload(f'{out2}', f'{out2}', UT, Star_Bots_Tamil, edit, '**Uploading Your File 📂**')
             await Star_Bots_Tamil.send_file(event.chat_id, uploader, caption=text, thumb=JPG, force_document=True)
         except Exception as e:
             await log.delete()
             await LOG_END(event, log_end_text)
             os.rmdir("encodemedia")
             print(e)
-            return await edit.edit(f"An error occured while uploading.\n\nContact [SUPPORT]({SUPPORT_LINK})", link_preview=False)
+            return await edit.edit(f"**An Error Occured while Uploading.\n\nContact [SUPPORT]({SUPPORT_LINK})**", link_preview=False)
     else:
         metadata = video_metadata(out2)
         width = metadata["width"]
@@ -128,23 +128,23 @@ async def compress(event, msg, ffmpeg_cmd=0, ps_name=None):
         duration = metadata["duration"]
         attributes = [DocumentAttributeVideo(duration=duration, w=width, h=height, supports_streaming=True)]
         try:
-            uploader = await fast_upload(f'{out2}', f'{out2}', UT, Star_Bots_Tamil, edit, '**UPLOADING:**')
+            uploader = await fast_upload(f'{out2}', f'{out2}', UT, Star_Bots_Tamil, edit, '**Uploading Your File 📂**')
             await Star_Bots_Tamil.send_file(event.chat_id, uploader, caption=text, thumb=JPG3, attributes=attributes, force_document=False)
         except Exception:
             try:
-                uploader = await fast_upload(f'{out2}', f'{out2}', UT, Star_Bots_Tamil, edit, '**UPLOADING:**')
+                uploader = await fast_upload(f'{out2}', f'{out2}', UT, Star_Bots_Tamil, edit, '**Uploading Your File 📂**')
                 await Star_Bots_Tamil.send_file(event.chat_id, uploader, caption=text, thumb=JPG, force_document=True)
             except Exception as e:
                 await log.delete()
                 await LOG_END(event, log_end_text)
                 os.rmdir("encodemedia")
                 print(e)
-                return await edit.edit(f"An error occured while uploading.\n\nContact [SUPPORT]({SUPPORT_LINK})", link_preview=False)
+                return await edit.edit(f"**An Error Occured while Uploading.\n\nContact [SUPPORT]({SUPPORT_LINK})**", link_preview=False)
     await edit.delete()
     os.remove(name)
     os.remove(out2)
     await log.delete()
-    log_end_text2 = f'**{_ps} PROCESS FINISHED**\n\nTime Taken: {round((time.time()-DT)/60)} minutes\nInitial size: {i_size/1000000}mb.\nFinal size: {f_size/1000000}mb.\n\n[Bot is free now.]({SUPPORT_LINK})'
+    log_end_text2 = f'**{_ps} Process Finished\n\nTime Taken :- {round((time.time()-DT)/60)} Minutes\nInitial Size :- {i_size/1000000}mb.\nFinal Size :- {f_size/1000000}mb.\n\n[Bot is Free Now.]({SUPPORT_LINK})**'
     await LOG_END(event, log_end_text2)
     
 
