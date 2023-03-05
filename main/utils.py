@@ -1,3 +1,5 @@
+# (c) Star Bots Tamil
+
 import sys
 import logging
 import importlib
