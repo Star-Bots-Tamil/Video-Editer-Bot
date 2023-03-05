@@ -23,7 +23,7 @@ forcesubtext = f"Hey there!To use this bot you've to join @{FORCESUB_UN}.\n\nAls
 
 @Star_Bots_Tamil.on(events.NewMessage(incoming=True,func=lambda e: e.is_private))
 async def compin(event):
-    db = Database(MONGODB_URI, 'videoconvertor')
+    db = Database(MONGODB_URI, 'Video-Editer-Bot')
     if event.is_private:
         media = event.media
         if media:
