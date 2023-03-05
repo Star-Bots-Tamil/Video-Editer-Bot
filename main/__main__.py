@@ -4,7 +4,7 @@ import glob
 from pathlib import Path
 from main.utils import load_plugins
 import logging
-from . import Drone
+from . import Star_Bots_Tamil
 
 logging.basicConfig(format='[%(levelname) 5s/%(asctime)s] %(name)s: %(message)s',
                     level=logging.WARNING)
@@ -21,4 +21,4 @@ print("Successfully deployed!")
 
 
 if __name__ == "__main__":
-    Drone.run_until_disconnected()
+    Star_Bots_Tamil.run_until_disconnected()
