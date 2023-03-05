@@ -44,7 +44,7 @@ async def trim(event, msg, st, et):
         await fast_download(name, file, Star_Bots_Tamil, edit, DT, "**Downloading Your File 📂**")
     except Exception as e:
         print(e)
-        return await edit.edit(f"An Error Occured While Downloading.\n\nContact :- [Star Bots Tamil Support]({SUPPORT_LINK})**", link_preview=False) 
+        return await edit.edit(f"**An Error Occured While Downloading.\n\nContact :- [Star Bots Tamil Support]({SUPPORT_LINK})**", link_preview=False) 
     try:
         await edit.edit("**Trimming Your File 📂**")
         bash(f'ffmpeg -i {name} -ss {st} -to {et} -acodec copy -vcodec copy {out}')
