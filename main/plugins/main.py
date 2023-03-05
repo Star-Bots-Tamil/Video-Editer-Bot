@@ -1,16 +1,4 @@
-#  This file is part of the VIDEOconvertor distribution.
-#  Copyright (c) 2021 vasusen-code ; All rights reserved. 
-#
-#  This program is free software: you can redistribute it and/or modify
-#  it under the terms of the GNU General Public License as published by
-#  the Free Software Foundation, version 3.
-#
-#  This program is distributed in the hope that it will be useful, but
-#  WITHOUT ANY WARRANTY; without even the implied warranty of
-#  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
-#  General Public License for more details.
-#
-#  License can be found in < https://github.com/vasusen-code/VIDEOconvertor/blob/public/LICENSE> .
+# (c) Star Bots Tamil
 
 import os, time, asyncio
 
@@ -19,7 +7,7 @@ from telethon.tl.types import DocumentAttributeVideo
 from ethon.telefunc import fast_download
 from ethon.pyfunc import video_metadata
 
-from .. import Drone, LOG_CHANNEL, FORCESUB_UN, MONGODB_URI, ACCESS_CHANNEL
+from .. import Star_Bots_Tamil, LOG_CHANNEL, FORCESUB_UN, MONGODB_URI, ACCESS_CHANNEL
 
 from main.plugins.rename import media_rename
 from main.plugins.compressor import compress
@@ -32,9 +20,9 @@ from main.plugins.ssgen import screenshot
 from LOCAL.localisation import source_text, SUPPORT_LINK
 
 #Don't be a MF by stealing someone's hardwork.
-forcesubtext = f"Hey there!To use this bot you've to join @{FORCESUB_UN}.\n\nAlso join @DroneBots."
+forcesubtext = f"Hey there!To use this bot you've to join @{FORCESUB_UN}.\n\nAlso join @Star_Bots_Tamil."
 
-@Drone.on(events.NewMessage(incoming=True,func=lambda e: e.is_private))
+@Star_Bots_Tamil.on(events.NewMessage(incoming=True,func=lambda e: e.is_private))
 async def compin(event):
     db = Database(MONGODB_URI, 'videoconvertor')
     if event.is_private:
@@ -69,7 +57,7 @@ async def compin(event):
                                 [Button.inline("RENAME", data="rename")]])
     await event.forward_to(int(ACCESS_CHANNEL))
     
-@Drone.on(events.callbackquery.CallbackQuery(data="encode"))
+@Star_Bots_Tamil.on(events.callbackquery.CallbackQuery(data="encode"))
 async def _encode(event):
     await event.edit("**🔀ENCODE**",
                     buttons=[
@@ -81,7 +69,7 @@ async def _encode(event):
                          Button.inline("x265", data="265")],
                         [Button.inline("BACK", data="back")]])
      
-@Drone.on(events.callbackquery.CallbackQuery(data="compress"))
+@Star_Bots_Tamil.on(events.callbackquery.CallbackQuery(data="compress"))
 async def _compress(event):
     await event.edit("**🗜COMPRESS**",
                     buttons=[
@@ -89,7 +77,7 @@ async def _compress(event):
                          Button.inline("FAST COMPRESS", data="fcomp")],
                         [Button.inline("BACK", data="back")]])
 
-@Drone.on(events.callbackquery.CallbackQuery(data="convert"))
+@Star_Bots_Tamil.on(events.callbackquery.CallbackQuery(data="convert"))
 async def convert(event):
     button = await event.get_message()
     msg = await button.get_reply_message()  
@@ -105,7 +93,7 @@ async def convert(event):
                          Button.inline("VIDEO", data="video")],
                         [Button.inline("BACK", data="back")]])
                         
-@Drone.on(events.callbackquery.CallbackQuery(data="back"))
+@Star_Bots_Tamil.on(events.callbackquery.CallbackQuery(data="back"))
 async def back(event):
     await event.edit("📽", buttons=[
                     [Button.inline("ENCODE", data="encode"),
@@ -140,7 +128,7 @@ async def check_timer(event, list1, list2):
     else:
         return True, None
     
-@Drone.on(events.callbackquery.CallbackQuery(data="mp3"))
+@Star_Bots_Tamil.on(events.callbackquery.CallbackQuery(data="mp3"))
 async def vtmp3(event):
     yy = await force_sub(event.sender_id)
     if yy is True:
@@ -155,7 +143,7 @@ async def vtmp3(event):
     else:
         await event.edit("Another process in progress!")
         
-@Drone.on(events.callbackquery.CallbackQuery(data="flac"))
+@Star_Bots_Tamil.on(events.callbackquery.CallbackQuery(data="flac"))
 async def vtflac(event):
     yy = await force_sub(event.sender_id)
     if yy is True:
@@ -170,7 +158,7 @@ async def vtflac(event):
     else:
         await event.edit("Another process in progress!")
         
-@Drone.on(events.callbackquery.CallbackQuery(data="wav"))
+@Star_Bots_Tamil.on(events.callbackquery.CallbackQuery(data="wav"))
 async def vtwav(event):
     yy = await force_sub(event.sender_id)
     if yy is True:
@@ -185,7 +173,7 @@ async def vtwav(event):
     else:
         await event.edit("Another process in progress!")
         
-@Drone.on(events.callbackquery.CallbackQuery(data="mp4"))
+@Star_Bots_Tamil.on(events.callbackquery.CallbackQuery(data="mp4"))
 async def vtmp4(event):
     yy = await force_sub(event.sender_id)
     if yy is True:
@@ -195,7 +183,7 @@ async def vtmp4(event):
     await event.delete()
     await mp4(event, msg)
     
-@Drone.on(events.callbackquery.CallbackQuery(data="mkv"))
+@Star_Bots_Tamil.on(events.callbackquery.CallbackQuery(data="mkv"))
 async def vtmkv(event):
     yy = await force_sub(event.sender_id)
     if yy is True:
@@ -205,7 +193,7 @@ async def vtmkv(event):
     await event.delete()
     await mkv(event, msg)  
     
-@Drone.on(events.callbackquery.CallbackQuery(data="webm"))
+@Star_Bots_Tamil.on(events.callbackquery.CallbackQuery(data="webm"))
 async def vtwebm(event):
     yy = await force_sub(event.sender_id)
     if yy is True:
@@ -215,7 +203,7 @@ async def vtwebm(event):
     await event.delete()
     await webm(event, msg)  
     
-@Drone.on(events.callbackquery.CallbackQuery(data="file"))
+@Star_Bots_Tamil.on(events.callbackquery.CallbackQuery(data="file"))
 async def vtfile(event):
     yy = await force_sub(event.sender_id)
     if yy is True:
@@ -225,7 +213,7 @@ async def vtfile(event):
     await event.delete()
     await file(event, msg)    
 
-@Drone.on(events.callbackquery.CallbackQuery(data="video"))
+@Star_Bots_Tamil.on(events.callbackquery.CallbackQuery(data="video"))
 async def ftvideo(event):
     yy = await force_sub(event.sender_id)
     if yy is True:
@@ -235,7 +223,7 @@ async def ftvideo(event):
     await event.delete()
     await video(event, msg)
     
-@Drone.on(events.callbackquery.CallbackQuery(data="rename"))
+@Star_Bots_Tamil.on(events.callbackquery.CallbackQuery(data="rename"))
 async def rename(event):    
     yy = await force_sub(event.sender_id)
     if yy is True:
@@ -244,7 +232,7 @@ async def rename(event):
     msg = await button.get_reply_message()  
     await event.delete()
     markup = event.client.build_reply_markup(Button.force_reply())
-    async with Drone.conversation(event.chat_id) as conv: 
+    async with Star_Bots_Tamil.conversation(event.chat_id) as conv: 
         cm = await conv.send_message("Send me a new name for the file as a `reply` to this message.\n\n**NOTE:** `.ext` is not required.", buttons=markup)                              
         try:
             m = await conv.get_reply()
@@ -257,7 +245,7 @@ async def rename(event):
             return await cm.edit("An error occured while waiting for the response.")
     await media_rename(event, msg, new_name)  
     
-@Drone.on(events.callbackquery.CallbackQuery(data="fcomp"))
+@Star_Bots_Tamil.on(events.callbackquery.CallbackQuery(data="fcomp"))
 async def fcomp(event):
     yy = await force_sub(event.sender_id)
     if yy is True:
@@ -284,7 +272,7 @@ async def fcomp(event):
     else:
         await event.edit(f"Another process in progress!\n\n**[LOG CHANNEL](https://t.me/{LOG_CHANNEL})**", link_preview=False)
                        
-@Drone.on(events.callbackquery.CallbackQuery(data="hcomp"))
+@Star_Bots_Tamil.on(events.callbackquery.CallbackQuery(data="hcomp"))
 async def hcomp(event):
     yy = await force_sub(event.sender_id)
     if yy is True:
@@ -311,7 +299,7 @@ async def hcomp(event):
     else:
         await event.edit(f"Another process in progress!\n\n**[LOG CHANNEL](https://t.me/{LOG_CHANNEL})**", link_preview=False)
 
-@Drone.on(events.callbackquery.CallbackQuery(data="264"))
+@Star_Bots_Tamil.on(events.callbackquery.CallbackQuery(data="264"))
 async def _264(event):
     yy = await force_sub(event.sender_id)
     if yy is True:
@@ -330,7 +318,7 @@ async def _264(event):
     else:
         await event.edit(f"Another process in progress!\n\n**[LOG CHANNEL](https://t.me/{LOG_CHANNEL})**", link_preview=False)
       
-@Drone.on(events.callbackquery.CallbackQuery(data="265"))
+@Star_Bots_Tamil.on(events.callbackquery.CallbackQuery(data="265"))
 async def _265(event):
     yy = await force_sub(event.sender_id)
     if yy is True:
@@ -349,7 +337,7 @@ async def _265(event):
     else:
         await event.edit(f"Another process in progress!\n\n**[LOG CHANNEL](https://t.me/{LOG_CHANNEL})**", link_preview=False)
         
-@Drone.on(events.callbackquery.CallbackQuery(data="240"))
+@Star_Bots_Tamil.on(events.callbackquery.CallbackQuery(data="240"))
 async def _240(event):
     yy = await force_sub(event.sender_id)
     if yy is True:
@@ -368,7 +356,7 @@ async def _240(event):
     else:
         await event.edit(f"Another process in progress!\n\n**[LOG CHANNEL](https://t.me/{LOG_CHANNEL})**", link_preview=False)
         
-@Drone.on(events.callbackquery.CallbackQuery(data="360"))
+@Star_Bots_Tamil.on(events.callbackquery.CallbackQuery(data="360"))
 async def _360(event):
     yy = await force_sub(event.sender_id)
     if yy is True:
@@ -387,7 +375,7 @@ async def _360(event):
     else:
         await event.edit(f"Another process in progress!\n\n**[LOG CHANNEL](https://t.me/{LOG_CHANNEL})**", link_preview=False)
         
-@Drone.on(events.callbackquery.CallbackQuery(data="480"))
+@Star_Bots_Tamil.on(events.callbackquery.CallbackQuery(data="480"))
 async def _480(event):
     yy = await force_sub(event.sender_id)
     if yy is True:
@@ -406,7 +394,7 @@ async def _480(event):
     else:
         await event.edit(f"Another process in progress!\n\n**[LOG CHANNEL](https://t.me/{LOG_CHANNEL})**", link_preview=False)
         
-@Drone.on(events.callbackquery.CallbackQuery(data="720"))
+@Star_Bots_Tamil.on(events.callbackquery.CallbackQuery(data="720"))
 async def _720(event):
     yy = await force_sub(event.sender_id)
     if yy is True:
@@ -425,7 +413,7 @@ async def _720(event):
     else:
         await event.edit(f"Another process in progress!\n\n**[LOG CHANNEL](https://t.me/{LOG_CHANNEL})**", link_preview=False)
           
-@Drone.on(events.callbackquery.CallbackQuery(data="sshots"))
+@Star_Bots_Tamil.on(events.callbackquery.CallbackQuery(data="sshots"))
 async def ss_(event):
     yy = await force_sub(event.sender_id)
     if yy is True:
@@ -447,7 +435,7 @@ async def ss_(event):
     timer.pop(int(timer.index(f'{now}')))
     process1.pop(int(process1.index(f'{event.sender_id}')))
     
-@Drone.on(events.callbackquery.CallbackQuery(data="trim"))
+@Star_Bots_Tamil.on(events.callbackquery.CallbackQuery(data="trim"))
 async def vtrim(event):
     yy = await force_sub(event.sender_id)
     if yy is True:
@@ -456,7 +444,7 @@ async def vtrim(event):
     msg = await button.get_reply_message()  
     await event.delete()
     markup = event.client.build_reply_markup(Button.force_reply())
-    async with Drone.conversation(event.chat_id) as conv: 
+    async with Star_Bots_Tamil.conversation(event.chat_id) as conv: 
         try:
             xx = await conv.send_message("send me the start time of the video you want to trim from as a reply to this. \n\nIn format hh:mm:ss , for eg: `01:20:69` ", buttons=markup)
             x = await conv.get_reply()
