@@ -1,3 +1,5 @@
+# (c) Star Bots Tamil
+
 START_TEXT = ("Hi, I am Encoder Bot,\n\nI can do multiple things!!\n\nJust send me the file to start with.\n\nYou can check in the Menu my 'Actions'.")
 
 FORCE_SUB_TEXT = "Hew!!\nIn order to use me, you've to join my parent channel."
