@@ -35,14 +35,14 @@ async def compin(event):
                 return await event.reply(f'**You're Banned to Use me!\n\nContact :- [Star Bots Tamil Support]({SUPPORT_LINK})**', link_preview=False)
             video = event.file.mime_type
             if 'video' in video:
-                await event.reply("📽",
+                await event.reply("Choose Your Appropriate Action 👇🏻",
                             buttons=[
-                                [Button.inline("Encoder", data="encode"),
-                                 Button.inline("Compressor", data="compress")],
-                                [Button.inline("Converter", data="convert"),
-                                 Button.inline("Renamer", data="rename")],
-                                [Button.inline("SSHOTS", data="sshots"),
-                                 Button.inline("Trimmer", data="trim")]
+                                [Button.inline("📊 Encoder", data="encode"),
+                                 Button.inline("🗜️ Compressor", data="compress")],
+                                [Button.inline("🔄 Converter", data="convert"),
+                                 Button.inline("✍🏻 Renamer", data="rename")],
+                                [Button.inline("🖼️ Screen Shots", data="sshots"),
+                                 Button.inline("✂️ Trimmer", data="trim")]
                             ])
             elif 'png' in video:
                 return
@@ -51,14 +51,14 @@ async def compin(event):
             elif 'jpg' in video:
                 return    
             else:
-                await event.reply('📦',
+                await event.reply('**✍🏻Rename Your File 📂**',
                             buttons=[  
-                                [Button.inline("RENAME", data="rename")]])
+                                [Button.inline("✍🏻 Renamer", data="rename")]])
     await event.forward_to(int(ACCESS_CHANNEL))
     
 @Star_Bots_Tamil.on(events.callbackquery.CallbackQuery(data="encode"))
 async def _encode(event):
-    await event.edit("**🔀ENCODE**",
+    await event.edit("**📊 Encode Your File 📂**",
                     buttons=[
                         [Button.inline("240p", data="240"),
                          Button.inline("360p", data="360")],
@@ -66,41 +66,41 @@ async def _encode(event):
                          Button.inline("720p", data="720")],
                         [Button.inline("x264", data="264"),
                          Button.inline("x265", data="265")],
-                        [Button.inline("BACK", data="back")]])
+                        [Button.inline("👈🏻 Back", data="back")]])
      
 @Star_Bots_Tamil.on(events.callbackquery.CallbackQuery(data="compress"))
 async def _compress(event):
-    await event.edit("**🗜COMPRESS**",
+    await event.edit("**🗜 Compress Your File 📂**",
                     buttons=[
-                        [Button.inline("HEVC COMPRESS", data="hcomp"),
-                         Button.inline("FAST COMPRESS", data="fcomp")],
-                        [Button.inline("BACK", data="back")]])
+                        [Button.inline("HEVC Compress", data="hcomp"),
+                         Button.inline("🏎️ Fast Compress", data="fcomp")],
+                        [Button.inline("👈🏻 Back", data="back")]])
 
 @Star_Bots_Tamil.on(events.callbackquery.CallbackQuery(data="convert"))
 async def convert(event):
     button = await event.get_message()
     msg = await button.get_reply_message()  
-    await event.edit("🔃**CONVERT**",
+    await event.edit("**🔄 Convert Your File 📂\n✶ If You Want to Set Custom Thumbnail 🖼️ on Video 🎥 / File 📂, Then First Send an Image 🖼️ and Save as Custom Thumbnail 🖼️.\nChoose Your Appropriate Action 👇🏻**",
                     buttons=[
-                        [Button.inline("MP3", data="mp3"),
-                         Button.inline("FLAC", data="flac"),
-                         Button.inline("WAV", data="wav")],
-                        [Button.inline("MP4", data="mp4"),
-                         Button.inline("WEBM", data="webm"),
-                         Button.inline("MKV", data="mkv")],
-                        [Button.inline("FILE", data="file"),
-                         Button.inline("VIDEO", data="video")],
-                        [Button.inline("BACK", data="back")]])
+                        [Button.inline("Convert to mp3", data="mp3"),
+                         Button.inline("Convert to flac", data="flac"),
+                         Button.inline("Convert to wav", data="wav")],
+                        [Button.inline("Convert to mp4", data="mp4"),
+                         Button.inline("Convert to webm", data="webm"),
+                         Button.inline("Convert to mkv", data="mkv")],
+                        [Button.inline("Convert as File 📂", data="file"),
+                         Button.inline("Convert as Video 🎥", data="video")],
+                        [Button.inline("👈🏻 Back", data="back")]])
                         
 @Star_Bots_Tamil.on(events.callbackquery.CallbackQuery(data="back"))
 async def back(event):
-    await event.edit("📽", buttons=[
-                    [Button.inline("ENCODE", data="encode"),
-                     Button.inline("COMPRESS", data="compress")],
-                    [Button.inline("CONVERT", data="convert"),
-                     Button.inline("RENAME", data="rename")],
-                    [Button.inline("SSHOTS", data="sshots"),
-                     Button.inline("TRIM", data="trim")]])
+    await event.edit("**Choose Your Appropriate Action 👇🏻** ", buttons=[
+                    [Button.inline("📊 Encoder", data="encode"),
+                     Button.inline("🗜️ Compressor", data="compress")],
+                    [Button.inline("🔄 Converter", data="convert"),
+                     Button.inline("✍🏻 Renamer", data="rename")],
+                    [Button.inline("🖼️ Screen Shots", data="sshots"),
+                     Button.inline("✂️ Trimmer", data="trim")]])
     
 #-----------------------------------------------------------------------------------------
 
@@ -112,7 +112,7 @@ async def set_timer(event, list1, list2):
     now = time.time()
     list2.append(f'{now}')
     list1.append(f'{event.sender_id}')
-    await event.client.send_message(event.chat_id, 'You can start a new process again after 5 minutes.')
+    await event.client.send_message(event.chat_id, '**You can Start a New Process Again After 5 Minutes.')
     await asyncio.sleep(300)
     list2.pop(int(timer.index(f'{now}')))
     list1.pop(int(process1.index(f'{event.sender_id}')))
@@ -123,7 +123,7 @@ async def check_timer(event, list1, list2):
         index = list1.index(f'{event.sender_id}')
         last = list2[int(index)]
         present = time.time()
-        return False, f"You have to wait {300-round(present-float(last))} seconds more to start a new process!"
+        return False, f"**You Have to Wait {300-round(present-float(last))} Seconds More to Start a New Process!**"
     else:
         return True, None
     
@@ -140,7 +140,7 @@ async def vtmp3(event):
         await mp3(event, msg)
         os.rmdir("audioconvert")
     else:
-        await event.edit("Another process in progress!")
+        await event.edit("**Another Process in Progress!**")
         
 @Star_Bots_Tamil.on(events.callbackquery.CallbackQuery(data="flac"))
 async def vtflac(event):
@@ -155,7 +155,7 @@ async def vtflac(event):
         await flac(event, msg)
         os.rmdir("audioconvert")
     else:
-        await event.edit("Another process in progress!")
+        await event.edit("**Another Process in Progress!**")
         
 @Star_Bots_Tamil.on(events.callbackquery.CallbackQuery(data="wav"))
 async def vtwav(event):
@@ -170,7 +170,7 @@ async def vtwav(event):
         await wav(event, msg)
         os.rmdir("audioconvert")
     else:
-        await event.edit("Another process in progress!")
+        await event.edit("**Another Process in Progress!**")
         
 @Star_Bots_Tamil.on(events.callbackquery.CallbackQuery(data="mp4"))
 async def vtmp4(event):
@@ -232,16 +232,16 @@ async def rename(event):
     await event.delete()
     markup = event.client.build_reply_markup(Button.force_reply())
     async with Star_Bots_Tamil.conversation(event.chat_id) as conv: 
-        cm = await conv.send_message("Send me a new name for the file as a `reply` to this message.\n\n**NOTE:** `.ext` is not required.", buttons=markup)                              
+        cm = await conv.send_message("**Send me a New Name for the File as a Reply to This Message.**\n\n❗Note :- .ext is Not Required.**", buttons=markup)                              
         try:
             m = await conv.get_reply()
             new_name = m.text
             await cm.delete()                    
             if not m:                
-                return await cm.edit("No response found.")
+                return await cm.edit("**No Response Found.**")
         except Exception as e: 
             print(e)
-            return await cm.edit("An error occured while waiting for the response.")
+            return await cm.edit("**An Error Occured While Waiting for the Response.**")
     await media_rename(event, msg, new_name)  
     
 @Star_Bots_Tamil.on(events.callbackquery.CallbackQuery(data="fcomp"))
@@ -253,7 +253,7 @@ async def fcomp(event):
         index = process1.index(f'{event.sender_id}')
         last = timer[int(index)]
         present = time.time()
-        return await event.answer(f"You have to wait {300-round(present-float(last))} seconds more to start a new process!", alert=True)
+        return await event.answer(f"**You Have to Wait {300-round(present-float(last))} Seconds more to Start a New Process!**", alert=True)
     button = await event.get_message()
     msg = await button.get_reply_message()
     if not os.path.isdir("encodemedia"):
@@ -264,12 +264,12 @@ async def fcomp(event):
         now = time.time()
         timer.append(f'{now}')
         process1.append(f'{event.sender_id}')
-        await event.client.send_message(event.chat_id, 'You can start a new process again after 5 minutes.')
+        await event.client.send_message(event.chat_id, '**You Can Start a New Process Again After 5 Minutes.**')
         await asyncio.sleep(300)
         timer.pop(int(timer.index(f'{now}')))
         process1.pop(int(process1.index(f'{event.sender_id}')))
     else:
-        await event.edit(f"Another process in progress!\n\n**[LOG CHANNEL](https://t.me/{LOG_CHANNEL})**", link_preview=False)
+        await event.edit(f"**Another Process in Progress!\n\n[LOG CHANNEL](https://t.me/{LOG_CHANNEL})**", link_preview=False)
                        
 @Star_Bots_Tamil.on(events.callbackquery.CallbackQuery(data="hcomp"))
 async def hcomp(event):
@@ -291,12 +291,12 @@ async def hcomp(event):
         now = time.time()
         timer.append(f'{now}')
         process1.append(f'{event.sender_id}')
-        await event.client.send_message(event.chat_id, 'You can start a new process again after 5 minutes.')
+        await event.client.send_message(event.chat_id, '**You Can Start a New Process Again After 5 Minutes.')
         await asyncio.sleep(300)
         timer.pop(int(timer.index(f'{now}')))
         process1.pop(int(process1.index(f'{event.sender_id}')))
     else:
-        await event.edit(f"Another process in progress!\n\n**[LOG CHANNEL](https://t.me/{LOG_CHANNEL})**", link_preview=False)
+        await event.edit(f"**Another Process in Progress!\n\n[LOG CHANNEL](https://t.me/{LOG_CHANNEL})**", link_preview=False)
 
 @Star_Bots_Tamil.on(events.callbackquery.CallbackQuery(data="264"))
 async def _264(event):
@@ -315,7 +315,7 @@ async def _264(event):
         os.rmdir("encodemedia")
         await set_timer(event, process1, timer) 
     else:
-        await event.edit(f"Another process in progress!\n\n**[LOG CHANNEL](https://t.me/{LOG_CHANNEL})**", link_preview=False)
+        await event.edit(f"**Another Process in Progress!\n\n[LOG CHANNEL](https://t.me/{LOG_CHANNEL})**", link_preview=False)
       
 @Star_Bots_Tamil.on(events.callbackquery.CallbackQuery(data="265"))
 async def _265(event):
@@ -334,7 +334,7 @@ async def _265(event):
         os.rmdir("encodemedia")
         await set_timer(event, process1, timer) 
     else:
-        await event.edit(f"Another process in progress!\n\n**[LOG CHANNEL](https://t.me/{LOG_CHANNEL})**", link_preview=False)
+        await event.edit(f"**Another Process in Progress!\n\n[LOG CHANNEL](https://t.me/{LOG_CHANNEL})**", link_preview=False)
         
 @Star_Bots_Tamil.on(events.callbackquery.CallbackQuery(data="240"))
 async def _240(event):
@@ -353,7 +353,7 @@ async def _240(event):
         os.rmdir("encodemedia")
         await set_timer(event, process1, timer) 
     else:
-        await event.edit(f"Another process in progress!\n\n**[LOG CHANNEL](https://t.me/{LOG_CHANNEL})**", link_preview=False)
+        await event.edit(f"**Another Process in Progress!\n\n[LOG CHANNEL](https://t.me/{LOG_CHANNEL})**", link_preview=False)
         
 @Star_Bots_Tamil.on(events.callbackquery.CallbackQuery(data="360"))
 async def _360(event):
@@ -372,7 +372,7 @@ async def _360(event):
         os.rmdir("encodemedia")
         await set_timer(event, process1, timer) 
     else:
-        await event.edit(f"Another process in progress!\n\n**[LOG CHANNEL](https://t.me/{LOG_CHANNEL})**", link_preview=False)
+        await event.edit(f"**Another Process in Progress!\n\n[LOG CHANNEL](https://t.me/{LOG_CHANNEL})**", link_preview=False)
         
 @Star_Bots_Tamil.on(events.callbackquery.CallbackQuery(data="480"))
 async def _480(event):
@@ -391,7 +391,7 @@ async def _480(event):
         os.rmdir("encodemedia")
         await set_timer(event, process1, timer) 
     else:
-        await event.edit(f"Another process in progress!\n\n**[LOG CHANNEL](https://t.me/{LOG_CHANNEL})**", link_preview=False)
+        await event.edit(f"**Another Process in Progress!\n\n[LOG CHANNEL](https://t.me/{LOG_CHANNEL})**", link_preview=False)
         
 @Star_Bots_Tamil.on(events.callbackquery.CallbackQuery(data="720"))
 async def _720(event):
@@ -410,7 +410,7 @@ async def _720(event):
         os.rmdir("encodemedia")
         await set_timer(event, process1, timer) 
     else:
-        await event.edit(f"Another process in progress!\n\n**[LOG CHANNEL](https://t.me/{LOG_CHANNEL})**", link_preview=False)
+        await event.edit(f"**Another Process in Progress!\n\n[LOG CHANNEL](https://t.me/{LOG_CHANNEL})**", link_preview=False)
           
 @Star_Bots_Tamil.on(events.callbackquery.CallbackQuery(data="sshots"))
 async def ss_(event):
@@ -421,7 +421,7 @@ async def ss_(event):
         index = process1.index(f'{event.sender_id}')
         last = timer[int(index)]
         present = time.time()
-        return await event.answer(f"You have to wait {120-round(present-float(last))} seconds more to start a new process!", alert=True)
+        return await event.answer(f"**You Have to Wait {120-round(present-float(last))} Seconds More to Start a New Process!**", alert=True)
     button = await event.get_message()
     msg = await button.get_reply_message()
     await event.delete()
@@ -429,7 +429,7 @@ async def ss_(event):
     now = time.time()
     timer.append(f'{now}')
     process1.append(f'{event.sender_id}')
-    await event.client.send_message(event.chat_id, 'You can start a new process again after 2 minutes.')
+    await event.client.send_message(event.chat_id, '**You Can Start a New Process Again After 2 Minutes.**')
     await asyncio.sleep(120)
     timer.pop(int(timer.index(f'{now}')))
     process1.pop(int(process1.index(f'{event.sender_id}')))
@@ -445,23 +445,23 @@ async def vtrim(event):
     markup = event.client.build_reply_markup(Button.force_reply())
     async with Star_Bots_Tamil.conversation(event.chat_id) as conv: 
         try:
-            xx = await conv.send_message("send me the start time of the video you want to trim from as a reply to this. \n\nIn format hh:mm:ss , for eg: `01:20:69` ", buttons=markup)
+            xx = await conv.send_message("**Send me the Start Time of The Video You Want to Trim From as a Reply to This.\n\nIn Format hh:mm:ss , for Example :- `01:20:69`**", buttons=markup)
             x = await conv.get_reply()
             st = x.text
             await xx.delete()                    
             if not st:               
-                return await xx.edit("No response found.")
+                return await xx.edit("**No Response Found.**")
         except Exception as e: 
             print(e)
             return await xx.edit("An error occured while waiting for the response.")
         try:
-            xy = await conv.send_message("send me the end time of the video you want to trim till as a reply to this.  \n\nIn format hh:mm:ss , for eg: `01:20:69` ", buttons=markup)
+            xy = await conv.send_message("**Send me the End 🔚 Time of The Video you Want to Trim till as a Reply to This. \n\nIn Format hh:mm:ss , for Example :- `01:20:69`**", buttons=markup)
             y = await conv.get_reply()
             et = y.text
             await xy.delete()                    
             if not et:                
-                return await xy.edit("No response found.")
+                return await xy.edit("**No Response Found.**")
         except Exception as e: 
             print(e)
-            return await xy.edit("An error occured while waiting for the response.")
+            return await xy.edit("**An Error Occured While Waiting for the Response.**")
         await trim(event, msg, st, et)
