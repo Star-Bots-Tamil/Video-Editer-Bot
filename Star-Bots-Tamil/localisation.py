@@ -1,34 +1,36 @@
 # (c) Star Bots Tamil
 
-START_TEXT = ("Hi, I am Encoder Bot,\n\nI can do multiple things!!\n\nJust send me the file to start with.\n\nYou can check in the Menu my 'Actions'.")
+START_TEXT = ("**Hi 👋🏻 {mention} ❤️,\nI am Star Bot's Official Video Editor Bot.\nMaintenance By :- [Karthik](https://t.me/TG_Karthik)\n\nI Can do Multiple Things!!\n\nJust Send Me the File 📂 to Start with Me.\n\nYou Can Check in the Menu My 'Actions'.**")
 
-FORCE_SUB_TEXT = "Hew!!\nIn order to use me, you've to join my parent channel."
+FORCE_SUB_TEXT = "**Hi 👋🏻 {mention} ❤️,\nIn order to Use Me, You're to Join Our Bot 🤖 Channel.**"
 
-CHANNEL_LINK = "https://t.me/shadow_linkz"
+CHANNEL_LINK = "https://t.me/Star_Bots_Tamil"
 
-SUPPORT_LINK = "https://t.me/night_shadowz"
+SUPPORT_LINK = "https://t.me/Star_Bots_Tamil_Support"
    
-help_text = """**v1.4**
+help_text = """**v1.4
 
-•`Encode` - encode your video into different lib format or resolution
+This Bot's Exacting Features 👇🏻
 
-•`HEVC compress` - negligible loss compression
+•`Encoder` - Encode Your Video into Differential Lib Format or Resolution
 
-•`FAST compress` - Very fast and Efficient compression
+•`HEVC Compress` - Negligible Loss Compression
 
-•`Convert` - change formats or extract audio of any video
+•`Fast Compress` - Very Fast and Efficient Compression 
 
-•`Rename` - rename any file, extension not required
+•`Converter` - Change Format or Extract Audio of any Video / File 📂
 
-•`SSHOTS` - generate 10 screenshots of your video
+•`Renamer` - Rename Any File 📂, Extension Not Required
 
-•`Trim` - cut your videos"""
+•`SSHOTS` - Generate 10 Screenshots of Your Video 
 
-source_text = "**Source**"
+•`Trimer` - Cut ✂️ / Trim Your Video**"""
 
-DEV = "https://t.me/MaheshChauhan"
+source_text = "**We're Released Our New Bot's Source Code**"
 
-spam_notice = "Run only one process at a time.Spamming the bot or encoding porn videos will lead you to a ban.\n\n Also, admins are not responsible for content processed under this bot"
+DEV = "https://t.me/TG_Karthik"
+
+spam_notice = "Run Only One 🥇 Process at a Time ⏳. Spamming the Bot or Encoding Porn 🔞 Videos Will lead you to a Ban.\n\n Also, Admins are Not Responsible for Content Processed Under This Bot"
 
 JPG = ""
 
