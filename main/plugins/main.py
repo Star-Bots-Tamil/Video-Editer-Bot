@@ -1,7 +1,6 @@
 # (c) Star Bots Tamil
 
 import os, time, asyncio
-
 from telethon import events, Button
 from telethon.tl.types import DocumentAttributeVideo
 from ethon.telefunc import fast_download
@@ -17,7 +16,7 @@ from main.Database.database import Database
 from main.plugins.actions import force_sub
 from main.plugins.encoder import encode
 from main.plugins.ssgen import screenshot
-from LOCAL.localisation import source_text, SUPPORT_LINK
+from Star-Bots-Tamil.localisation import source_text, SUPPORT_LINK
 
 #Don't be a MF by stealing someone's hardwork.
 forcesubtext = f"Hey there!To use this bot you've to join @{FORCESUB_UN}.\n\nAlso join @Star_Bots_Tamil."
