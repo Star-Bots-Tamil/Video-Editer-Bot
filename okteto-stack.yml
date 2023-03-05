@@ -1,5 +1,5 @@
 services:
-  drone-vc-p:
+  Star_Bots_Tamil-vc-p:
     build: .
     environment:
       API_ID: $API_ID  
