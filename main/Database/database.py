@@ -4,7 +4,7 @@ import datetime
 import motor.motor_asyncio
 from .. import MONGODB_URI
 
-SESSION_NAME = 'videoconvertor'
+SESSION_NAME = 'Video-Editer-Bot'
 
 class Database:
   
