@@ -1,4 +1,4 @@
-# (c) ©️ Star Bots Tamil
+# (c) Star Bots Tamil
 
 import time, math, re, asyncio, subprocess
 from ethon.pyfunc import total_frames as tf
