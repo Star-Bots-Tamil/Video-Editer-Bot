@@ -12,8 +12,8 @@ from ethon.pyfunc import video_metadata
 from .. import Star_Bots_Tamil, BOT_UN, MONGODB_URI
 
 from main.Database.database import Database
-from StarBotsTamil.localisation import JPG3 as t
-from StarBotsTamil.localisation import SUPPORT_LINK
+from StarBotsTamil.presents import JPG3 as t
+from StarBotsTamil.presents import SUPPORT_LINK
 
 async def media_rename(event, msg, new_name):
     edit = await event.client.send_message(event.chat_id, '**Trying to Process.**', reply_to=msg.id)
