@@ -7,8 +7,8 @@ from ethon.mystarts import vc_menu
 from .. import Star_Bots_Tamil, ACCESS_CHANNEL, AUTH_USERS
 
 from main.plugins.actions import set_thumbnail, rem_thumbnail, heroku_restart
-from Star-Bots-Tamil.localisation import START_TEXT as st
-from Star-Bots-Tamil.localisation import spam_notice, help_text, SUPPORT_LINK, source_text, DEV
+from StarBotsTamil.presents import START_TEXT as st
+from StarBotsTamil.presents import spam_notice, help_text, SUPPORT_LINK, source_text, DEV
 
 @Star_Bots_Tamil.on(events.NewMessage(incoming=True, pattern="/start"))
 async def start(event):
