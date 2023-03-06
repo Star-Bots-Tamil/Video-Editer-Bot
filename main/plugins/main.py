@@ -16,10 +16,10 @@ from main.Database.database import Database
 from main.plugins.actions import force_sub
 from main.plugins.encoder import encode
 from main.plugins.ssgen import screenshot
-from Star-Bots-Tamil.localisation import source_text, SUPPORT_LINK
+from StarBotsTamil.presents import source_text, SUPPORT_LINK
 
 #Don't be a MF by stealing someone's hardwork.
-forcesubtext = f"Hey there!To use this bot you've to join @{FORCESUB_UN}.\n\nAlso join @Star_Bots_Tamil."
+forcesubtext = f"**Hey there!To use this bot you've to join @{FORCESUB_UN}.\n\nAlso join @Star_Bots_Tamil.**"
 
 @Star_Bots_Tamil.on(events.NewMessage(incoming=True,func=lambda e: e.is_private))
 async def compin(event):
