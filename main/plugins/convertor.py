@@ -11,7 +11,7 @@ from ethon.pyutils import rename
 
 from .. import BOT_UN
 
-from Star-Bots-Tamil.localisation import SUPPORT_LINK, JPG, JPG2
+from StarBotsTamil.localisation import SUPPORT_LINK, JPG, JPG2
 
 async def mp3(event, msg):
     Star_Bots_Tamil = event.client
