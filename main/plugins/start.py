@@ -1,7 +1,6 @@
 # (c) Star Bots Tamil
 
 from telethon import events, Button
-from ethon.teleutils import mention
 from ethon.mystarts import vc_menu
 
 from .. import Star_Bots_Tamil, ACCESS_CHANNEL, AUTH_USERS
