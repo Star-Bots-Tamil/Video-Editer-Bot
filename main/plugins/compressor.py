@@ -11,8 +11,8 @@ from ethon.pyfunc import video_metadata
 
 from .. import Star_Bots_Tamil, BOT_UN, LOG_CHANNEL
 
-from Star-Bots-Tamil.localisation import SUPPORT_LINK, JPG, JPG2, JPG3
-from Star-Bots-Tamil.utils import ffmpeg_progress
+from StarBotsTamil.localisation import SUPPORT_LINK, JPG, JPG2, JPG3
+from StarBotsTamil.utils import ffmpeg_progress
 from main.plugins.actions import LOG_START, LOG_END
 
 async def compress(event, msg, ffmpeg_cmd=0, ps_name=None):
