@@ -11,7 +11,7 @@ from ethon.pyfunc import video_metadata
 
 from .. import Star_Bots_Tamil, BOT_UN, LOG_CHANNEL
 
-from StarBotsTamil.localisation import SUPPORT_LINK, JPG, JPG2, JPG3
+from StarBotsTamil.presents import SUPPORT_LINK, JPG, JPG2, JPG3
 from StarBotsTamil.utils import ffmpeg_progress
 from main.plugins.actions import LOG_START, LOG_END
 
