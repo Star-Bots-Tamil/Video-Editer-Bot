@@ -14,3 +14,4 @@ telegraph
 tgcrypto
 fasttelethonhelper
 telethon
+https://github.com/MiyukiKun/FastTelethonhelper
