@@ -88,3 +88,10 @@ async def res(event):
         await event.edit("**An Error Occured!**")
     elif result is True:
         await event.edit("**🔄 Restarting Bot 🤖, Wait for a Minute.**")
+
+@Star_Bots_Tamil.on(events.NewMessage(incoming=True, pattern="/help"))
+async def help(event):
+    await event.reply(f'its Help Text', 
+                      buttons=[
+                              [Button.inline("🤖 Bot Channel", url="https://t.me/Star_Bots_Tamil")]
+                              ])
