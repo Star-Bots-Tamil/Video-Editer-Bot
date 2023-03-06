@@ -12,8 +12,8 @@ from ethon.pyfunc import video_metadata
 from .. import Star_Bots_Tamil, BOT_UN, LOG_CHANNEL
 
 from main.plugins.actions import LOG_START, LOG_END
-from Star-Bots-Tamil.localisation import SUPPORT_LINK, JPG, JPG2, JPG3
-from Star-Bots-Tamil.utils import ffmpeg_progress
+from StarBotsTamil.presents import SUPPORT_LINK, JPG, JPG2, JPG3
+from StarBotsTamil.utils import ffmpeg_progress
 
 async def encode(event, msg, scale=0):
     ps_name = str(f"**{scale}p Encoding Your File 📂**")
