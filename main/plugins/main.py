@@ -3,7 +3,7 @@
 import os, time, asyncio
 from telethon import events, Button
 from telethon.tl.types import DocumentAttributeVideo
-from telethon.fasttelethonhelper import fast_download
+from ethon.fasttelethonhelper import fast_download
 from ethon.pyfunc import video_metadata
 
 from .. import Star_Bots_Tamil, LOG_CHANNEL, FORCESUB_UN, MONGODB_URI, ACCESS_CHANNEL
