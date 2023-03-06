@@ -32,7 +32,7 @@ async def compin(event):
                 return await event.reply(forcesubtext)
             banned = await db.is_banned(event.sender_id)
             if banned is True:
-                return await event.reply(f'**You're Banned to Use me!\n\nContact :- [Star Bots Tamil Support]({SUPPORT_LINK})**', link_preview=False)
+                return await event.reply(f'**You are Banned to Use me!\n\nContact :- [Star Bots Tamil Support]({SUPPORT_LINK})**', link_preview=False)
             video = event.file.mime_type
             if 'video' in video:
                 await event.reply("Choose Your Appropriate Action 👇🏻",
