@@ -12,4 +12,5 @@ pymongo[srv]
 requests
 telegraph
 tgcrypto
-FastTelethonhelper
+fasttelethonhelper
+telethon
