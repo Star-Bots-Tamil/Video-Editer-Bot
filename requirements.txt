@@ -14,4 +14,4 @@ telegraph
 tgcrypto
 fasttelethonhelper
 telethon
-https://github.com/New-dev0/Telethon/archive/Branch.zip
+
