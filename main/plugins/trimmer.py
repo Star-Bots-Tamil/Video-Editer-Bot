@@ -12,7 +12,7 @@ from ethon.pyutils import rename
 
 from .. import Star_Bots_Tamil, BOT_UN
 
-from Star-Bots-Tamil.localisation import SUPPORT_LINK, JPG, JPG2, JPG3
+from StarBotsTamil.presents import SUPPORT_LINK, JPG, JPG2, JPG3
 
 async def trim(event, msg, st, et):
     Star_Bots_Tamil = event.client
