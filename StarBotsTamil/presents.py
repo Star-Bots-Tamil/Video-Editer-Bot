@@ -8,7 +8,7 @@ CHANNEL_LINK = "https://t.me/Star_Bots_Tamil"
 
 SUPPORT_LINK = "https://t.me/Star_Bots_Tamil_Support"
    
-help_text = """**v1.4
+help_text = """**v1.5
 
 This Bot's Exacting Features 👇🏻
 
