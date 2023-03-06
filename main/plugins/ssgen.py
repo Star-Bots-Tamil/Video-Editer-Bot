@@ -4,7 +4,7 @@ import os, time, subprocess, asyncio
 
 from datetime import datetime as dt
 from telethon import events
-from fasttelethonhelper import fast_download
+from . import fast_download
 from ethon.pyfunc import video_metadata
 
 def hhmmss(seconds):
