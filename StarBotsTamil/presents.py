@@ -26,6 +26,20 @@ This Bot's Exacting Features 👇🏻
 
 •`Trimer` - Cut ✂️ / Trim Your Video**"""
 
+about_text = """<b>🤖 My Name : [Video Editor Star Bots](https://t.me/Video_Editor_Star_Bot)
+
+🧑🏻‍💻 Developer :- [Karthik](https://t.me/TG_Karthik)
+
+📝 Language :- Pyrogram
+
+📚 Framework :- Python3
+
+📡 Hosted on :- VPS
+
+🤖 Bot Channel :- [Star Bots Tamil](https://t.me/Star_Bots_Tamil)
+
+📢 Update Channel :- [Star Movies Tamil](https://t.me/Star_Moviess_Tamil)</b>"""
+
 source_text = "**We're Released Our New Bot's Source Code**"
 
 DEV = "https://t.me/TG_Karthik"
