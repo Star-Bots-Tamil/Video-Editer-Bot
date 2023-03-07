@@ -3,7 +3,6 @@
 https://github.com/vasusen-code/Telethon/archive/refs/tags/v1.24.0.zip
 cryptg
 dnspython
-Python >=3.6
 ethon==69.2 #for VC
 heroku3
 motor
