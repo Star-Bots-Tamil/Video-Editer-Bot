@@ -5,7 +5,7 @@ import os, subprocess, time
 from datetime import datetime as dt
 from telethon import events
 from telethon.tl.types import DocumentAttributeVideo
-from fasttelethonhelper import fast_download, fast_upload
+from . import fast_download, fast_upload
 from ethon.pyfunc import bash, video_metadata
 from ethon.pyutils import rename
 
