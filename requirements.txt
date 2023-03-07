@@ -3,7 +3,7 @@
 https://github.com/vasusen-code/Telethon/archive/refs/tags/v1.24.0.zip
 cryptg
 dnspython
-ethon==69.2 #for VC
+ethon #for VC
 heroku3
 motor
 Pillow>=5.3.0
@@ -12,6 +12,5 @@ pymongo[srv]
 requests
 telegraph
 tgcrypto
-fasttelethonhelper
 telethon
 
