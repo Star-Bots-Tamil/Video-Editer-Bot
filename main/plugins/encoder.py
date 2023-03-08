@@ -7,7 +7,7 @@ from telethon import events
 from telethon.errors.rpcerrorlist import MessageNotModifiedError
 from telethon.tl.types import DocumentAttributeVideo
 from ethon.telefunc import fast_upload
-from StarBotsTamil.helper fast_download
+from main.plugins.helper fast_download
 from ethon.pyfunc import video_metadata
 
 from .. import Star_Bots_Tamil, BOT_UN, LOG_CHANNEL
