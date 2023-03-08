@@ -6,8 +6,7 @@ import os
 import re
 import sys
 import time
-    from decouple import config
-
+from decouple import config
 
 try:
     from aiohttp import ClientSession as aiohttp_client
