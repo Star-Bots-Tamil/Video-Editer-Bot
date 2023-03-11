@@ -5,12 +5,12 @@ from ethon.mystarts import vc_menu
 from .. import Star_Bots_Tamil, ACCESS_CHANNEL, AUTH_USERS
 
 from main.plugins.actions import set_thumbnail, rem_thumbnail, heroku_restart
-from StarBotsTamil.presents import START_TEXT
+from StarBotsTamil.presents import START_TEXT as start
 from StarBotsTamil.presents import spam_notice, help_text, SUPPORT_LINK, source_text, DEV, about_text, help_text
 
 @Star_Bots_Tamil.on(events.NewMessage(incoming=True, pattern="/start"))
 async def start(event):
-    await event.reply(f'{START_TEXT}', 
+    await event.reply(f'{start}', 
                       buttons=[
                               [Button.inline("Bot's Menu", data="menu")]
                               ])
