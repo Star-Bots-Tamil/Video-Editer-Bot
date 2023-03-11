@@ -10,7 +10,7 @@ from StarBotsTamil.presents import spam_notice, help_text, SUPPORT_LINK, source_
 
 @Star_Bots_Tamil.on(events.NewMessage(incoming=True, pattern="/start"))
 async def start(event):
-    await event.reply(f'{start}', 
+    await event.reply(f'**{start}**', 
                       buttons=[
                               [Button.inline("Bot's Menu", data="menu")]
                               ])
@@ -100,7 +100,7 @@ async def help(event):
 
 @Star_Bots_Tamil.on(events.NewMessage(incoming=True, pattern="/about"))
 async def about(event):
-    await event.reply(f'{about_text}', 
+    await event.reply(f'**{about_text}**', 
                       buttons=[
                               [Button.url("🤖 Bot Channel", url="https://t.me/Star_Bots_Tamil")]
                               ])
