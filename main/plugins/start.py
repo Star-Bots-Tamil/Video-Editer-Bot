@@ -6,7 +6,7 @@ from .. import Star_Bots_Tamil, ACCESS_CHANNEL, AUTH_USERS
 
 from main.plugins.actions import set_thumbnail, rem_thumbnail, heroku_restart
 from StarBotsTamil.presents import START_TEXT as start
-from StarBotsTamil.presents import spam_notice, help_text, SUPPORT_LINK, source_text, DEV, about_text, about_text_1
+from StarBotsTamil.presents import spam_notice, help_text, SUPPORT_LINK, source_text, DEV, about_text, about_text_1, info_text
 
 @Star_Bots_Tamil.on(events.NewMessage(incoming=True, pattern="/start"))
 async def start(event):
@@ -22,6 +22,12 @@ async def start(event):
 @Star_Bots_Tamil.on(events.callbackquery.CallbackQuery(data="menu"))
 async def menu(event):
     await vc_menu(event)
+
+@Star_Bots_Tamil.on(events.callbackquery.CallbackQuery(data="info"))
+async def info(event):
+    await event.edit(f'**ℹ️NFO :-**\n\n{info_text}',
+                    buttons=[[
+                         Button.inline("Bot's Menu", data="menu")]])
  
 @Star_Bots_Tamil.on(events.callbackquery.CallbackQuery(data="notice"))
 async def notice(event):
