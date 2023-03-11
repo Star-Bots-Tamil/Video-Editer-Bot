@@ -10,7 +10,7 @@ from StarBotsTamil.presents import spam_notice, help_text, SUPPORT_LINK, source_
 
 @Star_Bots_Tamil.on(events.NewMessage(incoming=True, pattern="/start"))
 async def start(event):
-    await event.reply(f'{presents.START_TEXT}', 
+    await event.reply(f'START_TEXT', 
                       buttons=[
                               [Button.inline("Bot's Menu", data="menu")]
                               ])
