@@ -68,7 +68,7 @@ async def bcast(event):
                      [Button.inline(f"Failed :- {len(failed)}", data="none")]])
     
     
-@Star_Bots_Tamil.on(events.NewMessage(incoming=True, from_users=AUTH_USERS , pattern="^/disallow (.*)" ))
+@Star_Bots_Tamil.on(events.NewMessage(incoming=True, from_users=AUTH_USERS , pattern="/disallow"))
 async def bban(event):
     c = event.pattern_match.group(1)
     if not c:
@@ -86,7 +86,7 @@ async def bban(event):
         await event.reply(f"**{c} is Now Disallowed.**")
     admins.remove(f'**{int(AUTH)}**')
     
-@Star_Bots_Tamil.on(events.NewMessage(incoming=True, from_users=AUTH_USERS , pattern="^/allow (.*)" ))
+@Star_Bots_Tamil.on(events.NewMessage(incoming=True, from_users=AUTH_USERS , pattern="/allow"))
 async def unbban(event):
     xx = event.pattern_match.group(1)
     if not xx:
@@ -95,11 +95,4 @@ async def unbban(event):
     if xy is False:
         return await event.reply("**User is Already Allowed!**")
     await db.unbanning(int(xx))
-    await event.reply(f"**{xx} Allowed!**")
-    
-
-    
-
-
-   
-    
+    await event.reply(f"**{xx} Allowed!**") 
