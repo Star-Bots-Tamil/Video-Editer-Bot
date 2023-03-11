@@ -34,9 +34,9 @@ about_text = """🤖 My Name :- [Video Editor Star Bots](https://t.me/Video_Edit
 
 # 👬🏻 My Best Friend :- {mention} ❤️
 
-about_text_1 = """📝 Language :- Pyrogram
+about_text_1 = """📝 Language :- Python3
 
-📚 Framework :- Python3
+📚 Library :- Telethon
 
 📡 Hosted on :- VPS
 
