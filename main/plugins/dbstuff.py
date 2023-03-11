@@ -1,6 +1,6 @@
 # (c) Star Bots Tamil
 
-from telethon import events, Button
+from telethon import events, Button, TelegramClient
 from decouple import config
 
 from .. import Star_Bots_Tamil, AUTH_USERS, MONGODB_URI
