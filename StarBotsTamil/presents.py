@@ -42,6 +42,8 @@ about_text = """🤖 My Name :- [Video Editor Star Bots](https://t.me/Video_Edit
 
 🤖 Bot Channel :- [Star Bots Tamil](https://t.me/Star_Bots_Tamil)
 
+👥 Support Group :- [Star Bots Tamil Support](https://t.me/Star_Bots_Tamil_Support)
+
 📢 Update Channel :- [Star Movies Tamil](https://t.me/Star_Moviess_Tamil)"""
 
 source_text = "**We're Released Our New Bot's Source Code**"
