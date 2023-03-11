@@ -10,12 +10,12 @@ from StarBotsTamil.presents import spam_notice, help_text, SUPPORT_LINK, source_
 
 @Star_Bots_Tamil.on(events.NewMessage(incoming=True, pattern="/start"))
 async def start(event):
-    await event.reply(f'START_TEXT', 
+    await event.reply(f'{START_TEXT}', 
                       buttons=[
                               [Button.inline("Bot's Menu", data="menu")]
                               ])
     tag = f'[{event.sender.first_name}](tg://user?id={event.sender_id})'
-    await Star_Bots_Tamil.send_message(int(ACCESS_CHANNEL), f'{tag} started the BOT')
+    await Star_Bots_Tamil.send_message(int(ACCESS_CHANNEL), f'{tag} Started The Bot')
     
 @Star_Bots_Tamil.on(events.callbackquery.CallbackQuery(data="menu"))
 async def menu(event):
