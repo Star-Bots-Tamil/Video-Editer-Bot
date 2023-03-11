@@ -14,8 +14,8 @@ async def start(event):
                       buttons=[
                               [Button.inline("Bot's Menu", data="menu")]
                               ])
-    tag = f'[{event.sender.first_name}](tg://user?id={event.sender_id})'
-    await Star_Bots_Tamil.send_message(int(ACCESS_CHANNEL), f'{tag} Started The Bot')
+    mention = f'[{event.sender.first_name}](tg://user?id={event.sender_id})'
+    await Star_Bots_Tamil.send_message(int(ACCESS_CHANNEL), f'{mention} Started The Bot')
     
 @Star_Bots_Tamil.on(events.callbackquery.CallbackQuery(data="menu"))
 async def menu(event):
@@ -100,7 +100,7 @@ async def help(event):
 
 @Star_Bots_Tamil.on(events.NewMessage(incoming=True, pattern="/about"))
 async def about(event):
-    await event.reply(f'**{about_text}**', 
+    await event.reply(f'{about_text}', 
                       buttons=[
                               [Button.url("🤖 Bot Channel", url="https://t.me/Star_Bots_Tamil")]
                               ])
