@@ -20,9 +20,9 @@ async def incomming(event):
 async def listusers(event):
     xx = await event.reply("**Counting Total Users 📊 in Database.**")
     x = await db.total_users_count()
-    await xx.edit(f"**Total Users 📊 {int(x)}**")
+    await xx.edit(f"**Total Users 📊 :- {int(x)}**")
 
-@Star_Bots_Tamil.on(events.NewMessage(incoming=True, from_users=AUTH_USERS , pattern="/bcast"))
+@Star_Bots_Tamil.on(events.NewMessage(incoming=True, from_users=AUTH_USERS , pattern="/broadcast"))
 async def bcast(event):
     ids = []
     msg = await event.get_reply_message()
@@ -30,7 +30,7 @@ async def bcast(event):
         await event.reply("**Reply to a Message to Broadcast!**")
     xx = await event.reply("**Counting Total Users 📊 in Database.**")
     x = await db.total_users_count()
-    await xx.edit(f"**Total Users 📊 {int(x)}**")
+    await xx.edit(f"**Total Users 📊 :- {int(x)}**")
     all_users = await db.get_users()
     sent = []
     failed = []
@@ -42,30 +42,30 @@ async def bcast(event):
             try:
                 await event.client.send_message(int(id), msg)
                 sent.append(id)
-                await xx.edit(f"Total users : {x}", 
+                await xx.edit(f"**Total Users 📊 :- {x}**", 
                              buttons=[
-                                 [Button.inline(f"SENT: {len(sent)}", data="none")],
-                                 [Button.inline(f"FAILED: {len(failed)}", data="none")]])
+                                 [Button.inline(f"Sent :- {len(sent)}", data="none")],
+                                 [Button.inline(f"Failed :- {len(failed)}", data="none")]])
                 await asyncio.sleep(1)
             except FloodWaitError as fw:
                 await asyncio.sleep(fw.seconds + 10)
                 await event.client.send_message(int(id), msg)
                 sent.append(id)
-                await xx.edit(f"Total users : {x}", 
+                await xx.edit(f"**Total Users 📊 :- {x}**", 
                              buttons=[
-                                [Button.inline(f"SENT: {len(sent)}", data="none")],
-                                [Button.inline(f"FAILED: {len(failed)}", data="none")]])
+                                [Button.inline(f"Sent :- {len(sent)}", data="none")],
+                                [Button.inline(f"Failed :- {len(failed)}", data="none")]])
                 await asyncio.sleep(1)
         except Exception:
             failed.append(id)
-            await xx.edit(f"Total users : {x}", 
+            await xx.edit(f"**Total Users 📊 :- {x}", 
                              buttons=[
-                                 [Button.inline(f"SENT: {len(sent)}", data="none")],
-                                 [Button.inline(f"FAILED: {len(failed)}", data="none")]])
-    await xx.edit(f"Broadcast complete.\n\nTotal users in database: {x}", 
+                                 [Button.inline(f"Sent :- {len(sent)}", data="none")],
+                                 [Button.inline(f"Failed :- {len(failed)}", data="none")]])
+    await xx.edit(f"**Broadcast 💌 Completed 💯.\n\nTotal Users in Database :- {x}**", 
                  buttons=[
-                     [Button.inline(f"SENT: {len(sent)}", data="none")],
-                     [Button.inline(f"FAILED: {len(failed)}", data="none")]])
+                     [Button.inline(f"Sent :- {len(sent)}", data="none")],
+                     [Button.inline(f"Failed :- {len(failed)}", data="none")]])
     
     
 @Star_Bots_Tamil.on(events.NewMessage(incoming=True, from_users=AUTH_USERS , pattern="^/disallow (.*)" ))
