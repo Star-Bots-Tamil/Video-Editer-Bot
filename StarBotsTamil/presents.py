@@ -1,6 +1,6 @@
 # (c) Star Bots Tamil
 
-START_TEXT = ("**Hi 👋🏻 {mention} ❤️,\nI am Star Bot's Official Video Editor Bot.\nMaintenance By :- [Karthik](https://t.me/TG_Karthik)\n\nI Can do Multiple Things!!\n\nJust Send Me the File 📂 to Start with Me.\n\nYou Can Check in the Menu My 'Actions'.**")
+start_text = ("**Hi 👋🏻 {mention} ❤️,\nI am Star Bot's Official Video Editor Bot.\nMaintenance By :- [Karthik](https://t.me/TG_Karthik)\n\nI Can do Multiple Things!!\n\nJust Send Me the File 📂 to Start with Me.\n\nYou Can Check in the Menu My 'Actions'.**")
 
 FORCE_SUB_TEXT = "**Hi 👋🏻 {mention} ❤️,\nIn order to Use Me, You're to Join Our Bot 🤖 Channel.**"
 
@@ -8,7 +8,9 @@ CHANNEL_LINK = "https://t.me/Star_Bots_Tamil"
 
 SUPPORT_LINK = "https://t.me/Star_Bots_Tamil_Support"
    
-help_text = """**v1.5
+help_text = """**Hi 👋🏻 {mention} ❤️,
+
+v1.5 
 
 This Bot's Exacting Features 👇🏻
 
@@ -26,7 +28,7 @@ This Bot's Exacting Features 👇🏻
 
 •`Trimer` - Cut ✂️ / Trim Your Video**"""
 
-about_text = """<b>🤖 My Name : [Video Editor Star Bots](https://t.me/Video_Editor_Star_Bot)
+about_text = """**🤖 My Name : [Video Editor Star Bots](https://t.me/Video_Editor_Star_Bot)
 
 🧑🏻‍💻 Developer :- [Karthik](https://t.me/TG_Karthik)
 
@@ -38,7 +40,7 @@ about_text = """<b>🤖 My Name : [Video Editor Star Bots](https://t.me/Video_Ed
 
 🤖 Bot Channel :- [Star Bots Tamil](https://t.me/Star_Bots_Tamil)
 
-📢 Update Channel :- [Star Movies Tamil](https://t.me/Star_Moviess_Tamil)</b>"""
+📢 Update Channel :- [Star Movies Tamil](https://t.me/Star_Moviess_Tamil)**"""
 
 source_text = "**We're Released Our New Bot's Source Code**"
 
