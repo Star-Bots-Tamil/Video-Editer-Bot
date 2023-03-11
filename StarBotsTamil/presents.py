@@ -1,6 +1,6 @@
 # (c) Star Bots Tamil
 
-START_TEXT = ("Hi 👋🏻 {mention} ❤️,\nI am Star Bot's Official Video Editor Bot.\nMaintenance By :- Karthik\n\nI Can do Multiple Things!!\n\nJust Send Me the File 📂 to Start with Me.\n\nYou Can Check in the Menu My 'Actions'.")
+START_TEXT = "I am Star Bot's Official Video Editor Bot.\nMaintenance By :- Karthik\n\nI Can do Multiple Things!!\n\nJust Send Me the File 📂 to Start with Me.\n\nYou Can Check in the Menu My 'Actions'."
 
 FORCE_SUB_TEXT = "Hi 👋🏻 {mention} ❤️,\nIn order to Use Me, You're to Join Our Bot 🤖 Channel."
 
@@ -8,9 +8,7 @@ CHANNEL_LINK = "https://t.me/Star_Bots_Tamil"
 
 SUPPORT_LINK = "https://t.me/Star_Bots_Tamil_Support"
    
-help_text = """**Hi 👋🏻 {mention} ❤️,
-
-v1.5 
+help_text = """**Video Editer Star Bots v1.5 
 
 This Bot's Exacting Features 👇🏻
 
