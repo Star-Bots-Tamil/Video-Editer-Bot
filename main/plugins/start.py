@@ -10,7 +10,6 @@ from StarBotsTamil.presents import spam_notice, help_text, SUPPORT_LINK, source_
 
 @Star_Bots_Tamil.on(events.NewMessage(incoming=True, pattern="/start"))
 async def start(event):
-    mention = event.from_user.mention
     await event.reply(f'{start}', 
                       buttons=[
                               [Button.inline("Bot's Menu", data="menu")]
@@ -48,7 +47,6 @@ async def help(event):
     
 @Star_Bots_Tamil.on(events.callbackquery.CallbackQuery(data="actions"))
 async def plugins(event):
-    mention = event.from_user.mention
     await event.edit(f'{help_text}',
                     buttons=[[Button.inline("Bot's Menu", data="menu")]])
                    
