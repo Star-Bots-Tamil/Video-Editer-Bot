@@ -95,7 +95,7 @@ async def res(event):
 @Star_Bots_Tamil.on(events.NewMessage(incoming=True, pattern="/help"))
 async def help(event):
     mention = f'[{event.sender.first_name}](tg://user?id={event.sender_id})'
-    await event.reply(f'Hi 👋🏻 {mention} ❤️,\n\n{help_text}', 
+    await event.reply(f'**Hi 👋🏻 {mention} ❤️,\n\n**{help_text}', 
                       buttons=[
                               [Button.url("🤖 Bot Channel", url="https://t.me/Star_Bots_Tamil")]
                               ])
