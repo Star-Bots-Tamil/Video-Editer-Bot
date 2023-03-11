@@ -12,7 +12,8 @@ from StarBotsTamil.presents import spam_notice, help_text, SUPPORT_LINK, source_
 async def start(event):
     await event.reply(f'**{start}**', 
                       buttons=[
-                              [Button.inline("Bot's Menu", data="menu")]
+                              [Button.inline("Bot's Menu", data="menu")],
+                              [Button.url("🤖 Bot Channel", url="https://t.me/Star_Bots_Tamil")]
                               ])
     mention = f'[{event.sender.first_name}](tg://user?id={event.sender_id})'
     await Star_Bots_Tamil.send_message(int(ACCESS_CHANNEL), f'{mention} Started The Bot')
