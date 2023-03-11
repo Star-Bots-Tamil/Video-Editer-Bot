@@ -10,6 +10,7 @@ from StarBotsTamil.presents import spam_notice, help_text, SUPPORT_LINK, source_
 
 @Star_Bots_Tamil.on(events.NewMessage(incoming=True, pattern="/start"))
 async def start(event):
+    mention = f'[{event.sender.first_name}](tg://user?id={event.sender_id})'
     await event.reply(f'**Hi 👋🏻 {mention} ❤️,\n{start}**', link_preview=False,
                       buttons=[
                               [Button.inline("Bot's Menu", data="menu")],
