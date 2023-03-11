@@ -28,11 +28,11 @@ This Bot's Exacting Features 👇🏻
 
 about_text = """🤖 My Name :- [Video Editor Star Bots](https://t.me/Video_Editor_Star_Bot)
 
-🧑🏻‍💻 Developer :- [Karthik](https://t.me/TG_Karthik)
+🧑🏻‍💻 Developer :- [Karthik](https://t.me/TG_Karthik)"""
 
-👬🏻 My Best Friend :- {mention} ❤️
+# 👬🏻 My Best Friend :- {mention} ❤️
 
-📝 Language :- Pyrogram
+about_text_1 = """📝 Language :- Pyrogram
 
 📚 Framework :- Python3
 
