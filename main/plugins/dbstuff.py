@@ -58,7 +58,7 @@ async def bcast(event):
                 await asyncio.sleep(1)
         except Exception:
             failed.append(id)
-            await xx.edit(f"**Total Users 📊 :- {x}", 
+            await xx.edit(f"**Total Users 📊 :- {x}**", 
                              buttons=[
                                  [Button.inline(f"Sent :- {len(sent)}", data="none")],
                                  [Button.inline(f"Failed :- {len(failed)}", data="none")]])
