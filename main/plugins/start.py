@@ -11,7 +11,7 @@ from StarBotsTamil.presents import spam_notice, help_text, SUPPORT_LINK, source_
 @Star_Bots_Tamil.on(events.NewMessage(incoming=True, pattern="/start"))
 async def start(event):
     mention = f'[{event.sender.first_name}](tg://user?id={event.sender_id})'
-    await event.reply(f'Hi 👋🏻 {mention} ❤️,\nI am Star Bot's Official Video Editor Bot.\nMaintenance By :- Karthik\n\nI Can do Multiple Things!!\n\nJust Send Me the File 📂 to Start with Me.\n\nYou Can Check in the Menu Our "🤖 Bot Features".', link_preview=False,
+    await event.reply(f'Hi 👋🏻 {mention} ❤️,\nI am Star Bots Official Video Editor Bot.\nMaintenance By :- Karthik\n\nI Can do Multiple Things!!\n\nJust Send Me the File 📂 to Start with Me.\n\nYou Can Check in the Menu Our "🤖 Bot Features".', link_preview=False,
                       buttons=[
                               [Button.inline("Bot's Menu", data="menu")],
                               [Button.url("🤖 Bot Channel", url="https://t.me/Star_Bots_Tamil")]
