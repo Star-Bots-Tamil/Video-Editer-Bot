@@ -10,7 +10,8 @@ from StarBotsTamil.presents import spam_notice, help_text, SUPPORT_LINK, source_
 
 @Star_Bots_Tamil.on(events.NewMessage(incoming=True, pattern="/start"))
 async def start(event):
-    await event.reply(f'{start}', 
+    mention = event.from_user.mention
+    await event.reply(f'**Hi 👋🏻 {mention} ❤️,\nI am Star Bot's Official Video Editor Bot.\nMaintenance By :- [Karthik](https://t.me/TG_Karthik)\n\nI Can do Multiple Things!!\n\nJust Send Me the File 📂 to Start with Me.\n\nYou Can Check in the Menu My Actions.**', 
                       buttons=[
                               [Button.inline("Bot's Menu", data="menu")]
                               ])
@@ -100,7 +101,7 @@ async def help(event):
 
 @Star_Bots_Tamil.on(events.NewMessage(incoming=True, pattern="/about"))
 async def about(event):
-    await event.reply(f'{about_text}', 
+    await event.reply(f'**🤖 My Name :- [Video Editor Star Bots](https://t.me/Video_Editor_Star_Bot)**\n\n**🧑🏻‍💻 Developer :- [Karthik](https://t.me/TG_Karthik)**\n\n**📝 Language :- Pyrogram**\n\n**📚 Framework :- Python3**\n\n**📡 Hosted on :- VPS**\n\n**🤖 Bot Channel :- [Star Bots Tamil](https://t.me/Star_Bots_Tamil)**\n\n**📢 Update Channel :- [Star Movies Tamil](https://t.me/Star_Moviess_Tamil)**', 
                       buttons=[
                               [Button.url("🤖 Bot Channel", url="https://t.me/Star_Bots_Tamil")]
                               ])
