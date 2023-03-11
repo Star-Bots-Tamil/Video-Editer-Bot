@@ -14,21 +14,21 @@ v1.5
 
 This Bot's Exacting Features 👇🏻
 
-• `Encoder` - Encode Your Video into Differential Lib Format or Resolution
+• `Encoder` :- Encode Your Video into Differential Lib Format or Resolution
 
-• `HEVC Compress` - Negligible Loss Compression
+• `HEVC Compress` :- Negligible Loss Compression
 
-• `Fast Compress` - Very Fast and Efficient Compression 
+• `Fast Compress` :- Very Fast and Efficient Compression 
 
-• `Converter` - Change Format or Extract Audio of any Video / File 📂
+• `Converter` :- Change Format or Extract Audio of any Video / File 📂
 
-• `Renamer` - Rename Any File 📂, Extension Not Required
+• `Renamer` :- Rename Any File 📂, Extension Not Required
 
-• `Screen Shots` - Generate 10 Screenshots of Your Video 
+• `Screen Shots` :- Generate 10 Screenshots of Your Video 
 
-• `Trimer` - Cut ✂️ / Trim Your Video**"""
+• `Trimer` :- Cut ✂️ / Trim Your Video**"""
 
-about_text = """**🤖 My Name :- [Video Editor Star Bots](https://t.me/Video_Editor_Star_Bot)
+about_text = """🤖 My Name :- [Video Editor Star Bots](https://t.me/Video_Editor_Star_Bot)
 
 🧑🏻‍💻 Developer :- [Karthik](https://t.me/TG_Karthik)
 
@@ -40,7 +40,7 @@ about_text = """**🤖 My Name :- [Video Editor Star Bots](https://t.me/Video_Ed
 
 🤖 Bot Channel :- [Star Bots Tamil](https://t.me/Star_Bots_Tamil)
 
-📢 Update Channel :- [Star Movies Tamil](https://t.me/Star_Moviess_Tamil)**"""
+📢 Update Channel :- [Star Movies Tamil](https://t.me/Star_Moviess_Tamil)"""
 
 source_text = "**We're Released Our New Bot's Source Code**"
 
