@@ -48,6 +48,7 @@ async def help(event):
     
 @Star_Bots_Tamil.on(events.callbackquery.CallbackQuery(data="actions"))
 async def plugins(event):
+    mention = f'[{event.sender.first_name}](tg://user?id={event.sender_id})'
     await event.edit(f'{help_text}',
                     buttons=[[Button.inline("Bot's Menu", data="menu")]])
                    
@@ -92,6 +93,7 @@ async def res(event):
 
 @Star_Bots_Tamil.on(events.NewMessage(incoming=True, pattern="/help"))
 async def help(event):
+    mention = f'[{event.sender.first_name}](tg://user?id={event.sender_id})'
     await event.reply(f'{help_text}', 
                       buttons=[
                               [Button.url("🤖 Bot Channel", url="https://t.me/Star_Bots_Tamil")]
@@ -101,6 +103,7 @@ async def help(event):
 
 @Star_Bots_Tamil.on(events.NewMessage(incoming=True, pattern="/about"))
 async def about(event):
+    mention = f'[{event.sender.first_name}](tg://user?id={event.sender_id})'
     await event.reply(f'{about_text}', link_preview=False, 
                       buttons=[
                               [Button.url("🤖 Bot Channel", url="https://t.me/Star_Bots_Tamil")]
