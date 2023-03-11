@@ -1,12 +1,14 @@
 # (c) Star Bots Tamil
 
-START_TEXT = "I am Star Bot's Official Video Editor Bot.\nMaintenance By :- Karthik\n\nI Can do Multiple Things!!\n\nJust Send Me the File 📂 to Start with Me.\n\nYou Can Check in the Menu My 'Actions'."
+START_TEXT = "I am Star Bot's Official Video Editor Bot.\nMaintenance By :- Karthik\n\nI Can do Multiple Things!!\n\nJust Send Me the File 📂 to Start with Me.\n\nYou Can Check in the Menu Our '🤖 Bot Features'."
 
 FORCE_SUB_TEXT = "Hi 👋🏻 {mention} ❤️,\nIn order to Use Me, You're to Join Our Bot 🤖 Channel."
 
 CHANNEL_LINK = "https://t.me/Star_Bots_Tamil"
 
 SUPPORT_LINK = "https://t.me/Star_Bots_Tamil_Support"
+
+info_text = "This bot is developed by @MaheshChauhan\n\nWritten in python library TELETHON.\n\nBot by : @DroneBots\nSupport : @TeamDrone\n\nV1.4"   
    
 help_text = """**Video Editer Star Bots v1.5 
 
