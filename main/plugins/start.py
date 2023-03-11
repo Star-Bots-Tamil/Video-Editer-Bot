@@ -5,7 +5,7 @@ from ethon.mystarts import vc_menu
 from .. import Star_Bots_Tamil, ACCESS_CHANNEL, AUTH_USERS
 
 from main.plugins.actions import set_thumbnail, rem_thumbnail, heroku_restart
-from StarBotsTamil.presents import START_TEXT as start
+from StarBotsTamil.presents import start_text
 from StarBotsTamil.presents import spam_notice, help_text, SUPPORT_LINK, source_text, DEV, about_text, help_text
 
 @Star_Bots_Tamil.on(events.NewMessage(incoming=True, pattern="/start"))
