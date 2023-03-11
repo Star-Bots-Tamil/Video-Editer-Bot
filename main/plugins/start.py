@@ -6,7 +6,7 @@ from .. import Star_Bots_Tamil, ACCESS_CHANNEL, AUTH_USERS
 
 from main.plugins.actions import set_thumbnail, rem_thumbnail, heroku_restart
 from StarBotsTamil.presents import START_TEXT as start
-from StarBotsTamil.presents import spam_notice, help_text, SUPPORT_LINK, source_text, DEV, about_text
+from StarBotsTamil.presents import spam_notice, help_text, SUPPORT_LINK, source_text, DEV, about_text, about_text_1
 
 @Star_Bots_Tamil.on(events.NewMessage(incoming=True, pattern="/start"))
 async def start(event):
@@ -50,7 +50,7 @@ async def help(event):
 @Star_Bots_Tamil.on(events.callbackquery.CallbackQuery(data="actions"))
 async def plugins(event):
     mention = f'[{event.sender.first_name}](tg://user?id={event.sender_id})'
-    await event.edit(f'Hi 👋🏻 {mention} ❤️,\n\n{help_text}',
+    await event.edit(f'**Hi 👋🏻 {mention} ❤️,\n\n**{help_text}',
                     buttons=[[Button.inline("Bot's Menu", data="menu")]])
                    
  #-----------------------------------------------------------------------------------------------                            
@@ -105,7 +105,7 @@ async def help(event):
 @Star_Bots_Tamil.on(events.NewMessage(incoming=True, pattern="/about"))
 async def about(event):
     mention = f'[{event.sender.first_name}](tg://user?id={event.sender_id})'
-    await event.reply(f'{about_text}', link_preview=False, 
+    await event.reply(f'{about_text}\n👬🏻 My Best Friend :- {mention} ❤️\n{about_text_1}', link_preview=False, 
                       buttons=[
                               [Button.url("🤖 Bot Channel", url="https://t.me/Star_Bots_Tamil")]
                               ])
